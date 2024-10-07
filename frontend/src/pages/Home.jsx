@@ -1,12 +1,13 @@
+import TypingEffect from '../components/TypingEffect';
 import Content from '../components/Content';
 import '../assets/scss/Main.scss';
 import '../assets/scss/Home.scss';
 
 export default function Home() {
     const class1 = 'home-content';
-    const class2 = 'home-title';
+    const class2 = null;
     const class3 = 'home-text';
-    const title = 'Christophe LANGLOIS | Développeur Web';
+    const title = null;
     const text = (
       <>
         Développeur web passionné spécialisé dans la création de sites et
@@ -22,8 +23,15 @@ export default function Home() {
     );
 
     return (
-      <div className='container home'>
-      <Content class1={class1} class2={class2} class3={class3} title={title} text={text} />
+      <div className="container home">
+        <TypingEffect />
+        <Content
+          class1={class1}
+          class2={class2}
+          class3={class3}
+          title={title}
+          text={text}
+        />
       </div>
     );
 };

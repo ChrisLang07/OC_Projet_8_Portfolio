@@ -1,20 +1,15 @@
 .home {
     display: flex;
     justify-content: flex-end;
+    flex-direction: column;
+    width: 50%;
+    translate: 50%;
     
    
     .home-content {
-       width: 50%;
+       width: 65%;
        height: 70vh;
         
-        .home-title {
-            margin: 50px 0 70px;
-            font-size: 50px;
-            font-weight: 300;
-            text-align: center;
-            color: white;
-        }
-
         .home-text {
             text-align: justify;
             color: white;
