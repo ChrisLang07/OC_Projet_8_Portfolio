@@ -1,0 +1,27 @@
+
+.about {
+    display: flex;
+    justify-content: flex-end;
+
+    .about-content {
+        width: 50%;
+        height: 70vh;
+
+        .about-title, .about-text, .about-list{
+            color:white;
+        }
+
+        .about-title {
+            margin: 50px 0 70px;
+            font-size: 50px;
+            font-weight: 300;
+            text-align: center;
+            color: white;
+        }
+
+        .about-text {
+            text-align: justify;
+            color: white;
+        }
+    }
+};

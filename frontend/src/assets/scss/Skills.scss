@@ -1,0 +1,26 @@
+.skills {
+    display: flex;
+    justify-content: flex-end;
+
+    .skills-content {
+        width: 50%;
+        height: 70vh;
+
+        .skills-title, .skills-text, .skills-list{
+            color:white;
+        }
+
+        .skills-title {
+            margin: 50px 0 70px;
+            font-size: 50px;
+            font-weight: 300;
+            text-align: center;
+            color: white;
+        }
+
+        .skills-text {
+            text-align: justify;
+            color: white;
+        }
+    }
+};

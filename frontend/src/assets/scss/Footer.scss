@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    justify-content: flex-end;
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: 50%;
+        
+
+        .footer-title {
+            font-size: 16px;
+            text-align:right;
+        }
+
+        .footer-text {
+            text-align: center;
+        }
+
+        .footer-title, .footer-text {
+            color: white;
+        }
+    }
+}

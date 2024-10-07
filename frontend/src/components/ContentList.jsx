@@ -1,0 +1,39 @@
+import { useEffect, useState } from "react"
+
+export default function ContentList({ class1, class2, class3, class4, class5, title, text }) {
+    const [skills, setSkills] = useState([]);
+    const url = 'http://localhost:3000/data/skills.json';
+
+    useEffect(() => {
+        fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            setSkills(data);
+        })
+        .catch((error) => {
+            console.error("Une erreur est survenue:", error);
+        })
+
+    }, []);
+
+    return (
+        <div className={class1}>
+            <h1 className={class2}>{title}</h1>
+            <p className={class3}>{text}</p>
+            <ul className={class4}>
+            {skills.map((skillObj, index) => (
+                    Object.entries(skillObj).map(([key, value]) => (
+                        <li key={index} className={class5}> 
+                            <strong>{key}:</strong> {value}
+                        </li>
+                    ))
+                ))}
+            </ul>
+        </div>
+    )
+};
