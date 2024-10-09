@@ -1,27 +1,58 @@
-
 .about {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    height: 780px;
+    gap: 20px;
+
+    .about-title {
+        width: 50%;
+        margin: 0;
+        font-size: 50px;
+        font-weight: 300;
+        line-height: 100px;
+        text-align: center;
+        color: white;
+
+        @media(max-width: 1500px) {
+            font-size: 40px;
+        }
+
+        @media(max-width: 800px) {
+            font-size: 30px;
+            width: 100%;
+        }
+    }
 
     .about-content {
         width: 50%;
-        height: 70vh;
 
-        .about-title, .about-text, .about-list{
+        .about-title, .about-text, .about-list {
             color:white;
-        }
 
-        .about-title {
-            margin: 50px 0 70px;
-            font-size: 50px;
-            font-weight: 300;
-            text-align: center;
-            color: white;
+            @media(max-width: 800px) {
+                width: 90%;
+            }
         }
 
         .about-text {
+            margin: 0;
             text-align: justify;
             color: white;
+
+            @media(max-width: 1500px) {
+                font-size: 16px;
+                padding: 10px;
+            }
         }
+
+        @media(max-width: 800px) {
+            width: 90%;
+        }
+    }
+
+    @media(max-width: 1500px) {
+        align-items: flex-end;
     }
 };

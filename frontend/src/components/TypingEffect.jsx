@@ -9,8 +9,8 @@ export default function TypingEffect() {
     const typed = new Typed(el.current, {
       strings: ["Christophe LANGLOIS | Développeur Web"],
       typeSpeed: 100,
-      backSpeed: 0,         // Vitesse d'effacement
-      backDelay: 5000,       // Délai avant l'effacement (en ms)
+      backSpeed: 0,         
+      backDelay: 5000,      
       loop: true,
       loopCount: Infinity,
       cursorChar: "|"
@@ -20,7 +20,7 @@ export default function TypingEffect() {
     };
   }, []);
   return (
-    <div>
+    <div className="typing-effect">
       <h1 className="typing-area">
         {" "}
         <span className="typing-area--text" ref={el} />{" "}

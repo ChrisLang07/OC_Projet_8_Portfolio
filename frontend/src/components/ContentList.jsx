@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export default function ContentList({ class1, class2, class3, class4, class5, title, text }) {
+export default function ContentList({ class1, class2, class3, class4, class5, text }) {
     const [skills, setSkills] = useState([]);
     const url = 'http://localhost:3000/data/skills.json';
 
@@ -23,7 +23,6 @@ export default function ContentList({ class1, class2, class3, class4, class5, ti
 
     return (
         <div className={class1}>
-            <h1 className={class2}>{title}</h1>
             <p className={class3}>{text}</p>
             <ul className={class4}>
             {skills.map((skillObj, index) => (

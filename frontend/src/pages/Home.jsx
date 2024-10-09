@@ -5,9 +5,7 @@ import '../assets/scss/Home.scss';
 
 export default function Home() {
     const class1 = 'home-content';
-    const class2 = null;
-    const class3 = 'home-text';
-    const title = null;
+    const class2 = 'home-text';
     const text = (
       <>
         Développeur web passionné spécialisé dans la création de sites et
@@ -28,8 +26,6 @@ export default function Home() {
         <Content
           class1={class1}
           class2={class2}
-          class3={class3}
-          title={title}
           text={text}
         />
       </div>

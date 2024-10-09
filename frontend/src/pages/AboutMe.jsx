@@ -3,9 +3,7 @@ import '../assets/scss/About.scss';
 
 export default function About() {
     const aboutClass1 = 'about-content';
-    const aboutClass2 = 'about-title';
-    const aboutClass3 = 'about-text';
-    const aboutTitle = 'About me |';
+    const aboutClass2 = 'about-text';
     const aboutText = (
         <>
         Originaire de Châteauroux, au cœur du Berry dans la région Centre-Val de Loire,
@@ -23,7 +21,8 @@ export default function About() {
 
     return (
         <div className="container about">
-            <Content class1={aboutClass1} class2={aboutClass2} class3={aboutClass3} title={aboutTitle} text={aboutText}/>
+            <h1 className='about-title'>About me |</h1>
+            <Content class1={aboutClass1} class2={aboutClass2} text={aboutText}/>
         </div>
     )
 };

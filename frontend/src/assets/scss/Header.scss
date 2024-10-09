@@ -2,9 +2,15 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 200px;
+    height: 70px;
 
-    .header-title {
-        color: white
+    @media(max-width: 1500px) {
+        padding-right: 20px;
+    }
+
+    @media(max-width: 800px) {
+        height: 200px;
+        justify-content: flex-start;
+        padding-left: 10px;
     }
 }

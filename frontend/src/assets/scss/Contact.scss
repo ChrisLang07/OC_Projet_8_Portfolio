@@ -1,36 +1,52 @@
 form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-end;
-    width: 50%;
-  
+    height: 780px;
+    gap: 20px;
+      
     .form-title {
-      margin: 50px 0 70px;
-      font-size: 50px;
-      font-weight: 300;
-      text-align: center;
-      color: white;
+        width: 50%;
+        margin: 0;
+        font-size: 50px;
+        font-weight: 300;
+        line-height: 100px;
+        text-align: center;
+        color: white;
+
+        @media(max-width: 1500px) {
+          font-size: 40px;
+        }
+
+        @media(max-width: 800px) {
+          width: 100%;
+        }
     }
   
     .form-content {
       display: flex;
       flex-direction: column;
+      align-items: center;
       width: 50%;
       gap: 20px;
-      height: 50vh;
-  
+ 
       .form-input, .form-message {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        width: 70%;
   
         .form-label {
-          font-size: 18px;
           font-weight: 500;
           color: white;
+
+          @media(max-width: 800px) {
+            font-size: 16px !important
+          }
         }
   
-        .form-input--box, textarea {
+        .form-label, .form-input--box, textarea {
           font-size: 18px;
         }
   
@@ -38,9 +54,14 @@ form {
           height: 150px;
           font-size: 16px;
         }
+
+        @media(max-width: 800px) {
+          width: 90%;
+        }
       }
   
       .form-submit {
+        
         .form-submit--button {
           font-size: 18px;
           font-weight: 500;
@@ -53,9 +74,22 @@ form {
   
           &:hover {
             border: 1px solid white;
+            transition: ease 0.5s;
+          }
+
+          @media(max-width: 800px) {
+            font-size: 16px;
           }
         }
       }
+
+      @media(max-width: 800px) {
+        width: 100%;
+      }
+    }
+
+    @media(max-width: 800px) {
+      align-items: center;
     }
   }
   

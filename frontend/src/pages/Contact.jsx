@@ -26,7 +26,7 @@ export default function Contact() {
     };
 
     return (
-      <form className="container" onChange={handleSubmit}>
+      <form className="container form" onChange={handleSubmit}>
         <h1 className="form-title">Contact |</h1>
         <div className="form-content">
           <div className="form-input">

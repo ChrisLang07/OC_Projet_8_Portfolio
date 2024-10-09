@@ -21,7 +21,8 @@ export default function Skills() {
 
     return (
         <div className="container skills">
-            <ContentList class1={skillsClass1} class2={skillsClass2} class3={skillsClass3} class4={skillsClass4} class5={skillsClass5} title={skillsTitle} text={skillsText}/>
+            <h1 className="skills-title">Skills |</h1>
+            <ContentList class1={skillsClass1} class2={skillsClass2} class3={skillsClass3} class4={skillsClass4} class5={skillsClass5} text={skillsText}/>
         </div>
     )
 };
