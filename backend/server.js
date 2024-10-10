@@ -1,4 +1,5 @@
 const http = require('http');
+require('dotenv').config(); // Charger les variables d'environnement
 const app = require('./app');
 
 const server = http.createServer(app);

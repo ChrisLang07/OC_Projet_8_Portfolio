@@ -9,4 +9,4 @@ const formSchema = new mongoose.Schema({
 
 formSchema.plugin(uniqueValidator);
 
-module.exports = mongoose.model('formSchema', formSchema);
+module.exports = mongoose.model('Form', formSchema);
