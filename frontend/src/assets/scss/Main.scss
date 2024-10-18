@@ -6,10 +6,23 @@
     padding: 0;
     max-width: 1440px;
     font-family: 'Fira code', monospace;
+
+    @media(max-width: 1500px) {
+        padding-right: 20px;
+    }
+
+    @media(max-width: 800px) {
+        padding-right: 0;
+    }
 }
 
 body {
     background-image: url('../images/landing_page.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: top;
+
+    @media(max-width: 800px) {
+        background-position: revert;
+    }
 }
