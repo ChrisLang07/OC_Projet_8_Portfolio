@@ -22,12 +22,13 @@ export default function Home() {
 
     return (
       <div className="container home">
+        <div className="arrow">
+          <div className="arrow-line"></div>
+          <div className="arrow-head">V</div>
+        </div>
+
         <TypingEffect />
-        <Content
-          class1={class1}
-          class2={class2}
-          text={text}
-        />
+        <Content class1={class1} class2={class2} text={text} />
       </div>
     );
 };

@@ -24,8 +24,6 @@
         }
 
         &.open .line {
-            transition: transform 0.5s ease, opacity 0.5s ease;
-
             &:nth-child(1) {
                 transform: rotate(45deg) translate(0, 15px);
             }
@@ -63,7 +61,8 @@
             border-right: 1px solid white;
             transition: border 0.9s ease;
 
-            &:hover {
+            &:hover, 
+            &:focus {
                 border: 1px solid white;
             }
 
@@ -75,10 +74,6 @@
                 font-size: 16px;
                 width: 80px;
             }
-        }
-
-        @media(max-width: 1500px) {
-            
         }
 
         @media (max-width: 800px) {

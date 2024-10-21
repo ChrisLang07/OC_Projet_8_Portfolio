@@ -1,33 +1,34 @@
 .typing-effect {
     width: 50%;
-    
+
     @media(max-width: 1500px) {
         height: 130px;
+
+        .typing-area {
+            width: 100%;
+        }
+
+        .typing-area--text, 
+        .typed-cursor {
+            font-size: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
     }
 
     .typing-area {
         margin: 0;
-        height: 110px;       
-        
-        .typing-area--text, .typed-cursor {
+        height: 110px;
+
+        .typing-area--text, 
+        .typed-cursor {
             font-size: 50px;
             font-weight: 300;
             line-height: 50px;
             color: white;
 
-            @media(max-width: 1500px) {
-                font-size: 40px;
-                background-color: rgba(0, 0, 0, 0.5);
-            }
-
             @media(max-width: 800px) {
                 font-size: 30px;     
             }
-            
-        }
-
-        @media(max-width: 1500px) {
-            width: 100%;
         }
 
         @media(max-width: 800px) {
@@ -40,9 +41,3 @@
         width: 90%;
     }
 }
-
-
-
-
-
- 

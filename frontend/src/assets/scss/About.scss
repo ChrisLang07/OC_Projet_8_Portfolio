@@ -29,17 +29,12 @@
         width: 50%;
 
         .about-title, .about-text, .about-list {
-            color:white;
-
-            @media(max-width: 800px) {
-                width: 90%;
-            }
+            color: white;
         }
 
         .about-text {
             margin: 0;
             text-align: justify;
-            color: white;
 
             @media(max-width: 1500px) {
                 font-size: 16px;
@@ -55,4 +50,8 @@
     @media(max-width: 1500px) {
         align-items: flex-end;
     }
-};
+
+    @media(max-width: 800px) {
+        align-items: center;
+    }
+}
