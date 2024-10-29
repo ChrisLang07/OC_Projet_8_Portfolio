@@ -1,5 +1,5 @@
 import Content from '../components/Content';
-import '../assets/scss/Footer.scss';
+import '../assets/scss/components/Footer.scss';
 
 export default function Footer() {
     const footerClass1 = "footer-content";

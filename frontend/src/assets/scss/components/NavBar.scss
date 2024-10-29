@@ -1,0 +1,92 @@
+.navbar {
+    width: 50%;
+    
+    .navbar-hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+
+        .line {
+            width: 25px;
+            height: 3px;
+            margin: 4px 0;
+            background-color: white;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+
+            &:nth-child(1),
+            &:nth-child(3) {
+                transform: rotate(0) translate(0, 0);
+            }
+
+            &:nth-child(2) {
+                opacity: 1;
+            }
+        }
+
+        &.open .line {
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(0, 15px);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(0, -15px);
+            }
+        }
+
+        @media (max-width: 800px) {
+            display: flex;
+        }
+    }
+
+    .navbar-links {
+        display: flex;
+        justify-content: space-between;
+        transition: transform 0.5s ease;
+
+        &.open {
+            transform: translate(10px);
+        }
+
+        .navbar-link {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 3px 12px;
+            color: white;
+            border: 1px solid transparent;
+            border-right: 1px solid white;
+            transition: border 0.7s ease;
+
+            &:hover, 
+            &:focus,
+            &.active {
+                border: 1px solid white;
+            }
+
+            @media(max-width: 1500px) {
+                font-size: 16px;
+            }
+
+            @media(max-width: 800px) {
+                font-size: 16px;
+                width: 80px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            width: 120px;
+            flex-direction: column;
+            gap: 10px;
+            transform: translate(-150px);
+        }
+    }
+
+    @media(max-width: 800px) {
+        width: 100%;
+        padding-left: 20px;
+    }
+}

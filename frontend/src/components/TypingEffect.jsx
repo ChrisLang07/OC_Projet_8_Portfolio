@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import '../assets/scss/TypingEffect.scss';
+import '../assets/scss/components/TypingEffect.scss';
 
 export default function TypingEffect() {
   const el = useRef(null);

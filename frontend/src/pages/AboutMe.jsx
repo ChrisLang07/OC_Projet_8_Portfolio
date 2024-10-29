@@ -1,5 +1,5 @@
 import Content from '../components/Content';
-import '../assets/scss/About.scss';
+import '../assets/scss/components/About.scss';
 
 export default function About() {
     const aboutClass1 = 'about-content';

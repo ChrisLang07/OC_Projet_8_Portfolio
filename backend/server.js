@@ -1,5 +1,5 @@
 const http = require('http');
-require('dotenv').config(); // Charger les variables d'environnement
+require('dotenv').config();
 const app = require('./app');
 
 const server = http.createServer(app);

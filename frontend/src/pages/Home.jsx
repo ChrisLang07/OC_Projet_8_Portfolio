@@ -1,7 +1,7 @@
 import TypingEffect from '../components/TypingEffect';
 import Content from '../components/Content';
 import '../assets/scss/Main.scss';
-import '../assets/scss/Home.scss';
+import '../assets/scss/components/Home.scss';
 
 export default function Home() {
     const class1 = 'home-content';

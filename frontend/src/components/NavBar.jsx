@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import '../assets/scss/NavBar.scss';
+import '../assets/scss/components/NavBar.scss';
 
 export default function NavBar() {
     const[isOpen, setIsOpen] = useState(false);
@@ -17,20 +17,20 @@ export default function NavBar() {
           <span className="line"></span>
         </nav>
 
-        <nav className={`navbar-links ${isOpen? 'open' : ''}`}>
-          <NavLink to="/" className="navbar-link">
-            Home
-          </NavLink>
-          <NavLink to="about-me" className="navbar-link">
-            About-me
-          </NavLink>
-          <NavLink to="skills" className="navbar-link">
-            Skills
-          </NavLink>
-          <NavLink to="contact" className="navbar-link">
-            Contact
-          </NavLink>
-        </nav>
+        <nav className={`navbar-links ${isOpen ? 'open' : ''}`}>
+                <NavLink to="/" exact activeClassName="active" className="navbar-link">
+                    Home
+                </NavLink>
+                <NavLink to="/about-me" activeClassName="active" className="navbar-link">
+                    About-me
+                </NavLink>
+                <NavLink to="/skills" activeClassName="active" className="navbar-link">
+                    Skills
+                </NavLink>
+                <NavLink to="/contact" activeClassName="active" className="navbar-link">
+                    Contact
+                </NavLink>
+            </nav>
       </div>
     );
 };

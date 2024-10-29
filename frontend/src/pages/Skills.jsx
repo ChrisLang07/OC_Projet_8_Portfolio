@@ -1,5 +1,5 @@
 import ContentList from '../components/ContentList';
-import '../assets/scss/Skills.scss';
+import '../assets/scss/components/Skills.scss';
 
 export default function Skills() {
     const skillsClass1 = 'skills-content';

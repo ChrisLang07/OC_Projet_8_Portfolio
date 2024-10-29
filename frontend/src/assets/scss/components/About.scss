@@ -1,0 +1,58 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    flex-grow: 1;
+    gap: 20px;
+
+    .about-title {
+        width: 50%;
+        margin: 0;
+        font-size: 50px;
+        font-weight: 300;
+        line-height: 100px;
+        text-align: center;
+        color: white;
+
+        @media(max-width: 1500px) {
+            font-size: 40px;
+        }
+
+        @media(max-width: 800px) {
+            font-size: 30px;
+            width: 100%;
+        }
+    }
+
+    .about-content {
+        width: 50%;
+
+        .about-title, .about-text, .about-list {
+            color: white;
+        }
+
+        .about-text {
+            font-size: 18px;
+            margin: 0;
+            text-align: justify;
+
+            @media(max-width: 1500px) {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+
+        @media(max-width: 800px) {
+            width: 90%;
+        }
+    }
+
+    @media(max-width: 1500px) {
+        align-items: flex-end;
+    }
+
+    @media(max-width: 800px) {
+        align-items: center;
+    }
+}

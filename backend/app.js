@@ -21,6 +21,6 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/form', formRoute);
+app.use('/api/contact', formRoute);
 
 module.exports = app;
