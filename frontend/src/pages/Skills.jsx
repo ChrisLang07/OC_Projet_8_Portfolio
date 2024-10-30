@@ -7,7 +7,6 @@ export default function Skills() {
     const skillsClass3 = 'skills-text';
     const skillsClass4 = 'skills-list'
     const skillsClass5 = 'skills-item'
-    const skillsTitle = 'Skills |';
     const skillsText = (
         <>
         En tant que développeur passionné, j'ai acquis une solide expérience dans plusieurs technologies

@@ -33,8 +33,7 @@ export default function Contact() {
             if (!response.ok) {
                 throw new Error('Erreur lors de l\'envoi du message');
             }
-
-            const data = await response.json();
+            
             setSuccess('Message envoyé avec succès !');
             setShowSuccess(true); // Afficher le message de succès
             setFormData({ name: "", email: "", message: "" }); 

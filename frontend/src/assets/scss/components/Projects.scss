@@ -1,5 +1,11 @@
-.projects {
-    height: 800px;
-    width: 50%;
-    background-color: white;
+.sidebar {
+    width: 50%; 
+    background-color: transparent;
+    overflow-y: auto; 
+    padding: 20px; 
+
+    .scrollable-content {
+        height: 100%; 
+    }
 }
+
