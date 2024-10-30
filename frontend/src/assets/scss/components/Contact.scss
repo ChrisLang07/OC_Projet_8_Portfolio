@@ -11,9 +11,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
-        position:relative;
+        position: relative;
         gap: 20px;
-      
+
         .form-title {
             width: 50%;
             margin: 0;
@@ -22,52 +22,55 @@
             line-height: 100px;
             text-align: center;
             color: white;
-      
+
             @media(max-width: 1500px) {
                 font-size: 40px;
             }
-      
+
             @media(max-width: 800px) {
                 width: 100%;
             }
         }
-      
+
         .form-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 50%;
             gap: 20px;
-      
-            .form-input, .form-message {
+
+            .form-input,
+            .form-message {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-                width: 70%;
-      
+                width: 25vw;
+
                 .form-label {
                     font-weight: 500;
                     color: white;
-      
+
                     @media(max-width: 800px) {
                         font-size: 16px !important;
                     }
                 }
-      
-                .form-label, .form-input--box, textarea {
+
+                .form-label,
+                .form-input--box,
+                textarea {
                     font-size: 18px;
                 }
-      
+
                 textarea {
                     height: 150px;
                     font-size: 16px;
                 }
-      
+
                 @media(max-width: 800px) {
                     width: 90%;
                 }
             }
-      
+
             .form-submit {
                 .form-submit--button {
                     font-size: 18px;
@@ -78,24 +81,24 @@
                     border: 1px solid transparent;
                     border-right: 1px solid white;
                     color: white;
-      
+
                     &:hover {
                         border: 1px solid white;
                         transition: ease 0.5s;
                         cursor: pointer;
                     }
-      
+
                     @media(max-width: 800px) {
                         font-size: 16px;
                     }
                 }
             }
-      
+
             @media(max-width: 800px) {
                 width: 100%;
             }
         }
-      
+
         .success-message {
             color: white;
             display: flex;
@@ -110,28 +113,50 @@
             background-color: black;
             border: 1px solid white;
             font-weight: 500;
-            background-color: black;
         }
-      
+
         .close-button {
-          background-color: black;
-          border: 1px solid transparent;
-          border-right: 1px solid white;
-          color: white;
-          font-size: 15px;
-          font-weight: 500;
-          padding: 0 10px;
-      
-          &:hover {
-              border: 1px solid white;
-              transition: border 0.7s ease;
-              cursor: pointer;        
-          }
-      }
-      
+            background-color: black;
+            border: 1px solid transparent;
+            border-right: 1px solid white;
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 0 10px;
+
+            &:hover {
+                border: 1px solid white;
+                transition: border 0.7s ease;
+                cursor: pointer;
+            }
+        }
+
+        .loading-message {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px; /* Espacement au-dessus du message */
+
+            .spinner {
+                border: 4px solid rgba(255, 255, 255, 0.3); /* Couleur de fond du spinner */
+                border-radius: 50%; /* Pour le rendre circulaire */
+                border-top: 4px solid #3498db; /* Couleur du dessus du spinner */
+                width: 30px; /* Largeur du spinner */
+                height: 30px; /* Hauteur du spinner */
+                animation: spin 1s linear infinite; /* Animation du spinner */
+                margin-bottom: 10px; /* Espacement entre le spinner et le texte */
+            }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); } /* Commence à 0 degré */
+                100% { transform: rotate(360deg); } /* Tourne à 360 degrés */
+            }
+        }
+
         @media(max-width: 800px) {
             align-items: center;
         }
-      }
-      
+    }
 }

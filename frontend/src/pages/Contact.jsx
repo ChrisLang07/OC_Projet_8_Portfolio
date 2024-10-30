@@ -10,7 +10,8 @@ export default function Contact() {
 
     const [error, setError] = useState(null);  
     const [success, setSuccess] = useState(null);  
-    const [showSuccess, setShowSuccess] = useState(false); // État pour gérer la visibilité du message de succès
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (event) => {
         setFormData({
@@ -20,7 +21,9 @@ export default function Contact() {
     };
 
     const handleSubmit = async (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
+        setIsLoading(true);
+
         try {
             const response = await fetch('https://portfolio-backend-98ya.onrender.com/api/contact', {
                 method: 'POST',
@@ -41,13 +44,15 @@ export default function Contact() {
         } catch (error) {
             setError(error.message);
             setSuccess(null);  
+        } finally {
+            setIsLoading(false);
         }
     };
 
-    // Fonction pour fermer le message de succès
+    
     const handleCloseSuccess = () => {
         setShowSuccess(false);
-        setSuccess(null); // Optionnel : Réinitialiser le message de succès
+        setSuccess(null);
     };
 
     return (
@@ -90,8 +95,8 @@ export default function Contact() {
                         />
                     </div>
                     <div className="form-submit">
-                        <button className="form-submit--button" type="submit">
-                            Envoyer
+                        <button className="form-submit--button" type="submit" disabled={isLoading}>
+                            {isLoading ? 'Envoi en cours...' : 'Envoyer'}
                         </button>
                     </div>
                 </div>
@@ -104,6 +109,7 @@ export default function Contact() {
                         </button>
                     </div>
                 )}
+                {isLoading && <div className="loading-message">Chargement...</div>} {/* Message de chargement */}
             </form>
         </div>
     );
