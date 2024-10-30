@@ -22,7 +22,7 @@ export default function Contact() {
     const handleSubmit = async (event) => {
         event.preventDefault(); 
         try {
-            const response = await fetch('http://localhost:4000/api/contact', {
+            const response = await fetch('https://portfolio-backend-98ya.onrender.com/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
