@@ -21,7 +21,19 @@ body {
     background-position: top;
 
     @media(max-width: 800px) {
-        background-position: revert;
+        background-position: center;
+    }
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: 800px) {
+        gap: 20px;
+        height: 100vh;
     }
 }
 

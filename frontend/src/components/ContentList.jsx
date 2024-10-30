@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 export default function ContentList({ class1, class2, class3, class4, class5, text }) {
     const [skills, setSkills] = useState([]);
-    const url = 'http://localhost:3000/data/skills.json';
+    const url = '/data/skills.json';
 
     useEffect(() => {
         fetch(url)

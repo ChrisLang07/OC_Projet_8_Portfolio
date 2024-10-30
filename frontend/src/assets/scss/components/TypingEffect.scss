@@ -2,7 +2,7 @@
     width: 50%;
 
     @media(max-width: 1500px) {
-        height: 130px;
+        height: 145px;
 
         .typing-area {
             width: 100%;
@@ -10,15 +10,17 @@
 
         .typing-area--text, 
         .typed-cursor {
-            
             background-color: rgba(0, 0, 0, 0.5);
         }
     }
 
+    @media (max-width: 800px) {
+        width: 55%;
+        height: 200px;
+    }
+
     .typing-area {
         margin: 0;
-        height: 110px;
-        width: 70%;
 
         .typing-area--text, 
         .typed-cursor {
@@ -37,8 +39,8 @@
         }
 
         @media(max-width: 800px) {
-            width: 100%;
-            height: 145px;
+            width: 55%;
+            height: 200px;
         }
     }
 
