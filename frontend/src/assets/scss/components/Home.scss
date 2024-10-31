@@ -27,7 +27,7 @@
             font-weight: 400;
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 768px) {
             left: 95%;
         }
     }
@@ -53,14 +53,14 @@
             text-align: justify;
             color: white;
 
-            @media (max-width: 1500px) {
+            @media (max-width: 1024px) {
                 font-size: 16px;
                 font-weight: 400;
                 padding-right: 20px;
                 background-color: rgba(0, 0, 0, 0.5);
             }
 
-            @media (max-width: 800px) {
+            @media (max-width: 768px) {
                 font-size: 14px;
                 text-align: left;
                 background-color: rgba(0, 0, 0, 0.5);
@@ -68,8 +68,7 @@
         }
     }
 
-    /* Responsive styles */
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
         gap: 0px;
         .home-content {
             width: 90%;

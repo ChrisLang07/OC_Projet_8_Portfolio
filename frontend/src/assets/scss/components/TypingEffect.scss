@@ -1,10 +1,10 @@
 .typing-effect {
     width: 50%;
-    height: 110px;
+    height: 20svh;
 
     .typing-area {
         margin: 0;
-        width: 75%;
+        width: 35svw;
 
         .typing-area--text,
         .typed-cursor {
@@ -15,7 +15,7 @@
         }
     }
 
-    @media (max-width: 1500px) {
+    @media (max-width: 1024px) {
         height: 145px;
 
         .typing-area {
@@ -29,7 +29,7 @@
         }
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
         width: 90%;
         height: 200px;
 
@@ -41,5 +41,9 @@
                 font-size: 30px;
             }
         }
+    }
+
+    @media(max-width: 1024px) {
+        height: 25vh;
     }
 }

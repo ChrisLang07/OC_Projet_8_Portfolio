@@ -15,23 +15,23 @@
             color: white;
             background-color: rgba(0, 0, 0, 0.5);
 
-            @media (max-width: 1500px) {
+            @media (max-width: 1024px) {
                 font-size: 14px;
             }
         }
 
         /* Responsive styles */
-        @media (max-width: 800px) {
+        @media (max-width: 768px) {
             width: 80%;
         }
     }
 
     /* Responsive styles */
-    @media (max-width: 1500px) {
+    @media (max-width: 1024px) {
         justify-content: flex-end;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
         justify-content: center;
     }
 }
