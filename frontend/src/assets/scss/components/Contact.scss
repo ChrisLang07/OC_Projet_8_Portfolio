@@ -137,25 +137,28 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 20px; /* Espacement au-dessus du message */
+            margin-top: 20px;
 
             .spinner {
-                border: 4px solid rgba(255, 255, 255, 0.3); /* Couleur de fond du spinner */
-                border-radius: 50%; /* Pour le rendre circulaire */
-                border-top: 4px solid #3498db; /* Couleur du dessus du spinner */
-                width: 30px; /* Largeur du spinner */
-                height: 30px; /* Hauteur du spinner */
-                animation: spin 1s linear infinite; /* Animation du spinner */
-                margin-bottom: 10px; /* Espacement entre le spinner et le texte */
-            }
-
-            @keyframes spin {
-                0% { transform: rotate(0deg); } /* Commence à 0 degré */
-                100% { transform: rotate(360deg); } /* Tourne à 360 degrés */
+                border: 4px solid rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                border-top: 4px solid #3498db;
+                width: 30px;
+                height: 30px;
+                animation: spin 1s linear infinite;
+                margin-bottom: 10px;
             }
         }
+    }
 
-        @media(max-width: 800px) {
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Responsive styles */
+    @media(max-width: 800px) {
+        form {
             align-items: center;
         }
     }

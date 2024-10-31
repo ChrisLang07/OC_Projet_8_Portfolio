@@ -7,7 +7,7 @@ export default function About() {
     const aboutText = (
         <>
         Originaire de Châteauroux, au cœur du Berry dans la région Centre-Val de Loire,
-        je suis passionné par les technologies du web.<br />
+        je suis passionné par les technologies du web.<br /><br />
         Toujours curieux et à l'affût des dernières innovations, j'aime explorer les nouvelles tendances
         digitales et les intégrer dans mes projets.<br />
         En parallèle de ma passion pour le web, je suis également un grand adepte du sport, en particulier
