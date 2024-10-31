@@ -22,7 +22,7 @@ export default function Contact() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setIsLoading(true);
+        setIsLoading(true);  // Set isLoading to true
 
         try {
             const response = await fetch('https://portfolio-backend-98ya.onrender.com/api/contact', {
@@ -38,18 +38,17 @@ export default function Contact() {
             }
             
             setSuccess('Message envoyé avec succès !');
-            setShowSuccess(true); // Afficher le message de succès
+            setShowSuccess(true);
             setFormData({ name: "", email: "", message: "" }); 
             setError(null);  
         } catch (error) {
             setError(error.message);
             setSuccess(null);  
         } finally {
-            setIsLoading(false);
+            setIsLoading(false);  // Set isLoading to false
         }
     };
 
-    
     const handleCloseSuccess = () => {
         setShowSuccess(false);
         setSuccess(null);
@@ -98,10 +97,9 @@ export default function Contact() {
                         <button className="form-submit--button" type="submit" disabled={isLoading}>
                             {isLoading ? 'Envoi en cours...' : 'Envoyer'}
                         </button>
+                        {isLoading && <div className="loading-spinner"></div>}
                     </div>
-                </div>
-                {error && <div className="error-message">{error}</div>}
-                {showSuccess && (
+                    {showSuccess && (
                     <div className="success-message">
                         {success}
                         <button onClick={handleCloseSuccess} className="close-button">
@@ -109,7 +107,9 @@ export default function Contact() {
                         </button>
                     </div>
                 )}
-                {isLoading && <div className="loading-message">Chargement...</div>} {/* Message de chargement */}
+                </div>
+                {error && <div className="error-message">{error}</div>}
+                
             </form>
         </div>
     );
