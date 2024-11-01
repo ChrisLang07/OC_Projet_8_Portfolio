@@ -1,5 +1,6 @@
 import TypingEffect from '../components/TypingEffect';
 import Content from '../components/Content';
+import ArrowDown from '../components/ArrowDown';
 import '../assets/scss/Main.scss';
 import '../assets/scss/components/Home.scss';
 
@@ -22,11 +23,7 @@ export default function Home() {
 
     return (
       <div className="container home">
-        <div className="arrow">
-          <div className="arrow-line"></div>
-          <div className="arrow-head">V</div>
-        </div>
-
+        <ArrowDown />
         <TypingEffect />
         <Content class1={class1} class2={class2} text={text} />
       </div>

@@ -1,0 +1,19 @@
+.nopage {
+    text-align: center;
+    position: relative;
+
+    .number,
+    .oups {
+        font-family: 'audiowide';
+        color: white;
+    }
+
+    .number {
+        font-size: 33vh;
+        margin: 0;
+    }
+
+    .oups {
+        font-size: 50px;
+    }
+}

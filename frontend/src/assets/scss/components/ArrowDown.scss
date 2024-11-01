@@ -1,0 +1,35 @@
+.arrow-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: -53%;
+    animation: moveDown 2s ease-in-out infinite;
+
+    .arrow-down--line {
+        height: 35px;
+        width: 1px;
+        border-left: 2px dashed white;
+    }
+
+    .arrow-down--head {
+        font-size: 24px;
+        font-weight: 400;
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        left: 95%;
+    }
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(100px);
+    }
+
+    100% {
+        transform: translateY(450px);
+    }
+}
