@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 100px;
     transform:translateY(100svh);
-    background-color: white;
+    
     z-index: 10;
 
     .project-one, .project-two {
@@ -11,9 +11,10 @@
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
-        height: 50svh;
+        height: 40svh;
         width: 100%;
         position: relative;
+        background-color: white;
         
     
         .project-one--title, .project-two--title {
