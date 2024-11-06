@@ -1,9 +1,13 @@
 .projects {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    height: 93svh;
+    padding: 0 20px;
+    gap: 5svh;
     transform:translateY(100svh);
-    
+    background-color: black;
     z-index: 10;
 
     .project-one, .project-two {
@@ -53,6 +57,18 @@
                 
                 transition: transform 3s ease;
             }
+        }
+    }
+
+    .projects-content {
+        text-align: center;
+        width: 80%;
+
+        .projects-text {
+            font-size: 18px;
+            font-weight: 300;
+            color: white;
+            margin: 0;
         }
     }
     

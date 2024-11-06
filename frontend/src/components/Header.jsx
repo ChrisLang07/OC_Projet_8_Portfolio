@@ -6,7 +6,6 @@ import '../assets/scss/components/Header.scss';
 export default function Header() {
   const[isVisible, setIsVisible] = useState(true);
   const[backGrndOn, setBackGrndOn] = useState(false);
-  let lastScrollY = 0;
 
   const handleScrolly = () => {
     const currentScrollY = window.scrollY;
@@ -24,7 +23,6 @@ export default function Header() {
       setBackGrndOn(false);
     }
 
-    lastScrollY = currentScrollY;
   };
 
   useEffect(() => {
