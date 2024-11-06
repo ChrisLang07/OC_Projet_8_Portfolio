@@ -1,14 +1,37 @@
+import { useEffect, useState } from 'react';
 import '../assets/scss/components/Projects.scss';
 
-export default function Projects() {
+export default function Projects({className, classTitle, title, classProject}) {
+    const[isVisible, setIsVisible] = useState(false);
+    let lastScrollY = 0;
+    
+
+    const handleScrolly = () => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY) {
+            setIsVisible(true);
+        } else {
+            setIsVisible(false);
+        }
+        
+        lastScrollY = currentScrollY;
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScrolly);
+
+        return () => {
+            window.removeEventListener('scroll', handleScrolly);
+    }
+    },);
+
     return (
-        <div className="projects">
-            <div className='projects-one'>
-                <h1>project one</h1>
-            </div>
-            <div className='projects-two'>
-            <h1>project two</h1>
-            </div>
-        </div>
+        <section className={className}>
+            <h1 className={`${classTitle} ${isVisible? 'isVisible' : ''}`}>{title}</h1>
+            <article className={`${classProject} ${isVisible? 'isVisible' : ''}`}></article>
+            <article className={`${classProject} ${isVisible? 'isVisible' : ''}`}></article>
+            <article className={`${classProject} ${isVisible? 'isVisible' : ''}`}></article>
+        </section>
     )
-};
+}

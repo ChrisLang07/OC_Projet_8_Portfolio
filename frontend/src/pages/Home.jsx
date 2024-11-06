@@ -1,10 +1,15 @@
 import TypingEffect from '../components/TypingEffect';
 import Content from '../components/Content';
 import ArrowDown from '../components/ArrowDown';
+import Projects from '../components/Projects';
 import '../assets/scss/Main.scss';
 import '../assets/scss/components/Home.scss';
 
 export default function Home() {
+    const classOne = 'project-one';
+    const titleOne = ( <>Project | <strong>Kasa</strong></>)
+    const classTwo = 'project-two';
+    const titleTwo = ( <>Project | <strong>I don't kwnow yet !</strong></>)
     const class1 = 'home-content';
     const class2 = 'home-text';
     const text = (
@@ -22,10 +27,14 @@ export default function Home() {
     );
 
     return (
-      <div className="container home">
-        <ArrowDown />
-        <TypingEffect />
-        <Content class1={class1} class2={class2} text={text} />
-      </div>
+      <>
+        <div className="container home">
+          <ArrowDown />
+          <TypingEffect />
+          <Content class1={class1} class2={class2} text={text} />
+        </div>
+          <Projects className={classOne} classTitle='project-one--title' title={titleOne} classProject='project-one--project'/>
+          <Projects className={classTwo} classTitle='project-two--title' title={titleTwo} classProject='project-two--project'/>
+      </>
     );
 };

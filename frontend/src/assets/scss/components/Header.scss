@@ -1,17 +1,39 @@
 header {
-	margin: 0 auto;
-	width: 100%;
+    margin: 0 auto;
+    max-width: 1440px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: top 0.3s ease;
+    z-index: 1000;
+
+    &.visible {
+        top: 0;
+    }
+
+    &:not(.visible) {
+        top: -100px; 
+    }
+
+    &.background-on {
+        background-color: black;
+    }
+
+    &:not(.background-on) {
+        background-color: transparent;
+    }
 
     .header-navbar {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         height: 7vh;
-    
+
         @media(max-width: 1024px) {
             padding-right: 20px;
         }
-    
+
         @media(max-width: 768px) {
             height: 200px;
             width: 38%;

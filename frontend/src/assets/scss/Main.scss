@@ -24,12 +24,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('/assets/images/landing_page.webp');
-    max-width: 1920px;
+    max-width: 1440px;
     margin: auto;
+    background-image: url('/assets/images/landing_page.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
+    background-attachment: fixed;
 
     @media (max-width: 768px) {
         gap: 20px;
