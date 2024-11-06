@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import ContentList from '../components/ContentList';
 import '../assets/scss/components/Skills.scss';
 
@@ -15,13 +16,20 @@ export default function Skills() {
         <strong>Voici un aperçu de mes compétences:</strong> 
         </>
     );
+
+    const[isVisble, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        setIsVisible(true);
+    }, []);
+
                         
   
 
     return (
         <div className="container skills">
-            <h1 className="skills-title">Skills |</h1>
-            <ContentList class1={skillsClass1} class2={skillsClass2} class3={skillsClass3} class4={skillsClass4} class5={skillsClass5} text={skillsText}/>
+            <h1 className={`skills-title ${isVisble? 'visible' : ''}`}>Skills |</h1>
+            <ContentList class1={skillsClass1} class2={`${skillsClass2} ${isVisble? 'visible' : ''}`} class3={`${skillsClass3} ${isVisble? 'visible' : ''}`} class4={`${skillsClass4} ${isVisble? 'visible' : ''}`} class5={skillsClass5} text={skillsText}/>
         </div>
     )
 };

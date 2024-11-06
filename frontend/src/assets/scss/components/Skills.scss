@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    position: relative;
     flex-grow: 1;
     gap: 20px;
 
@@ -13,7 +14,14 @@
         font-weight: 300;
         line-height: 100px;
         text-align: center;
+        position: relative;
+        left: -100vw;
         color: white;
+
+        &.visible {
+            transform: translateX(100vw);
+            transition: transform 2S ease;
+        }
     }
 
     .skills-content {
@@ -32,6 +40,12 @@
             font-size: 18px;
             text-align: justify;
             padding-bottom: 10px;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+
+            &.visible {
+                opacity: 1;
+            }
         }
     }
 

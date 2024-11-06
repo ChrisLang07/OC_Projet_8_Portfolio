@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Content from '../components/Content';
 import '../assets/scss/components/About.scss';
 
@@ -16,13 +17,19 @@ export default function About() {
         où <strong>l'engagement et la détermination sont mes maîtres mots.</strong>
         </>
     );
+
+    const[isVisble, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        setIsVisible(true);
+    }, []);
                         
   
 
     return (
         <div className="container about">
-            <h1 className='about-title'>About me |</h1>
-            <Content class1={aboutClass1} class2={aboutClass2} text={aboutText}/>
+            <h1 className={`about-title ${isVisble? 'visible' : ''}`}>About me |</h1>
+            <Content class1={aboutClass1} class2={`${aboutClass2} ${isVisble? 'visible' : ''}`} text={aboutText}/>
         </div>
     )
 };
