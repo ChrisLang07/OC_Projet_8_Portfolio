@@ -21,7 +21,14 @@
             font-weight: 300;
             line-height: 100px;
             text-align: center;
+            position: relative;
+            left: -100vw;
             color: white;
+
+            &.visible {
+                transform: translateX(100vw);
+                transition: transform 2s ease;
+            }
 
             @media(max-width: 1024px) {
                 font-size: 40px;
@@ -38,6 +45,12 @@
             align-items: center;
             width: 50%;
             gap: 20px;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+
+            &.visible {
+                opacity: 1;
+            }
 
             .form-input,
             .form-message {

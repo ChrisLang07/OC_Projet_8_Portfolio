@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../assets/scss/components/Contact.scss';
 
 export default function Contact() {
@@ -54,11 +54,18 @@ export default function Contact() {
         setSuccess(null);
     };
 
+    const[isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        setIsVisible(true);
+
+    }, []);
+
     return (
         <div className="container contact">
             <form className="form" onSubmit={handleSubmit}>
-                <h1 className="form-title">Contact |</h1>
-                <div className="form-content">
+                <h1 className={`form-title ${isVisible? 'visible' : ''}`}>Contact |</h1>
+                <div className={`form-content ${isVisible? 'visible' : ''}`}>
                     <div className="form-input">
                         <label className="form-label" htmlFor="name">Nom |</label>
                         <input
