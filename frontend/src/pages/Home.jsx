@@ -7,11 +7,14 @@ import '../assets/scss/components/Home.scss';
 
 export default function Home() {
     const projectsClass1 = 'projects-content';
-    const projectClass2 = 'projects-text';
     const classOne = 'project-one';
-    const titleOne = ( <>Project | <strong>I don't kwow yet !</strong></>)
+    const titleOne = ( <>Sophie Bluel |<strong> JavaScript</strong></>)
+    const urlProjectOne = 'http://localhost:4000/data/project1.json'
+
+    const projectClass2 = 'projects-text';
     const classTwo = 'project-two';
-    const titleTwo = ( <>Project | <strong>I don't kwow yet !</strong></>)
+    const titleTwo = ( <>Kasa |<strong> React</strong></>)
+    const urlProjectTwo = 'http://localhost:4000/data/project2.json'
     const class1 = 'home-content';
     const class2 = 'home-text';
     const text1 = (
@@ -46,10 +49,26 @@ export default function Home() {
           <TypingEffect />
           <Content class1={class1} class2={class2} text={text1} />
         </div>
-        <div className='container projects'>
-        <Projects className={classOne} classTitle='project-one--title' title={titleOne} classProject='project-one--project'/>
-        <Content class1={projectsClass1} class2={projectClass2} text={text2} />
-        <Projects className={classTwo} classTitle='project-two--title' title={titleTwo} classProject='project-two--project'/>
+        <div className="container projects">
+          <Projects
+            className={classOne}
+            classTitle="project-one--title"
+            title={titleOne}
+            classProject="project-one--image"
+            jsonUrl={urlProjectOne}
+          />
+          <Content
+            class1={projectsClass1}
+            class2={projectClass2}
+            text={text2}
+          />
+          <Projects
+            className={classTwo}
+            classTitle="project-two--title"
+            title={titleTwo}
+            classProject="project-two--image"
+            jsonUrl={urlProjectTwo}
+          />
         </div>
       </>
     );

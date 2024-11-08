@@ -1,37 +1,89 @@
 import { useEffect, useState } from 'react';
 import '../assets/scss/components/Projects.scss';
 
-export default function Projects({className, classTitle, title, classProject}) {
-    const[isVisible, setIsVisible] = useState(false);
-    let lastScrollY = 0;
-    
+export default function Projects({ className, classTitle, title, classProject, jsonUrl }) {
+    const [isVisible, setIsVisible] = useState(false);
+    const [projects, setProjects] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-    const handleScrolly = () => {
-        const currentScrollY = window.scrollY;
-
-        if (currentScrollY > lastScrollY) {
-            setIsVisible(true);
-        } else {
-            setIsVisible(false);
-        }
-        
-        lastScrollY = currentScrollY;
-    }
-
+    // Gestion du défilement pour la visibilité des éléments
     useEffect(() => {
-        window.addEventListener('scroll', handleScrolly);
+        const handleScroll = () => {
+            setIsVisible(window.scrollY > 100);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-        return () => {
-            window.removeEventListener('scroll', handleScrolly);
-    }
-    },);
+    // Récupération des données JSON
+    useEffect(() => {
+        if (!jsonUrl) return;
+        fetch(jsonUrl)
+            .then((response) => {
+                if (!response.ok) throw new Error('Erreur lors de la récupération des données JSON');
+                return response.json();
+            })
+            .then((data) => setProjects(data))
+            .catch((error) => console.error("Une erreur est survenue :", error));
+    }, [jsonUrl]);
+
+    // Ouvrir la modale pour une image spécifique
+    const openModal = (index) => {
+        setCurrentIndex(index);
+        setIsModalOpen(true);
+    };
+
+    // Fermer la modale
+    const closeModal = () => setIsModalOpen(false);
+
+    // Aller à l'image précédente
+    const prevImage = (e) => {
+        e.stopPropagation(); // Empêche la fermeture de la modale
+        setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : projects.length - 1));
+    };
+
+    // Aller à l'image suivante
+    const nextImage = (e) => {
+        e.stopPropagation(); // Empêche la fermeture de la modale
+        setCurrentIndex((prevIndex) => (prevIndex < projects.length - 1 ? prevIndex + 1 : 0));
+    };
 
     return (
         <section className={className}>
-            <h1 className={`${classTitle} ${isVisible? 'isVisible' : ''}`}>{title}</h1>
-            <article className={`${classProject} ${isVisible? 'isVisible' : ''}`}></article>
-            <article className={`${classProject} ${isVisible? 'isVisible' : ''}`}></article>
-            <article className={`${classProject} ${isVisible? 'isVisible' : ''}`}></article>
+            <h1 className={`${classTitle} ${isVisible ? 'isVisible' : ''}`}>{title}</h1>
+
+            {projects.map((project, index) => (
+                <article key={index} className={`${classProject} ${isVisible ? 'isVisible' : ''}`}>
+                    <img
+                        src={`http://localhost:4000/images/${project.imageUrl}`}
+                        alt={project.name}
+                        onClick={() => openModal(index)} // Ouvre la modale au clic
+                        className="clickable-image"
+                    />
+                </article>
+            ))}
+
+            {/* Modale d'affichage */}
+            {isModalOpen && (
+                <div className="modal" onClick={closeModal}>
+                    <span className="close" onClick={(e) => { e.stopPropagation(); closeModal(); }}>&times;</span>
+
+                    {/* Vérifiez que currentIndex est dans les limites */}
+                    {projects[currentIndex] && (
+                        <div className="modal-content">
+                            <img
+                                src={`http://localhost:4000/images/${projects[currentIndex].imageUrl}`}
+                                alt={projects[currentIndex].name}
+                                className="modal-image"
+                            />
+                            <div className="caption">{currentIndex + 1} / {projects.length}</div>
+                            <span className="prev" onClick={prevImage}>&#10094;</span>
+                            <span className="next" onClick={nextImage}>&#10095;</span>
+                        </div>
+                    )}
+                </div>
+            )}
         </section>
-    )
+    );
 }
