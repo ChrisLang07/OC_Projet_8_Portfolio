@@ -8,13 +8,14 @@ import '../assets/scss/components/Home.scss';
 export default function Home() {
     const projectsClass1 = 'projects-content';
     const classOne = 'project-one';
-    const titleOne = ( <>Sophie Bluel |<strong> JavaScript</strong></>)
-    const urlProjectOne = 'http://localhost:4000/data/project1.json'
+    const titleOne = ( <>Project Sophie Bluel |<strong> JavaScript</strong></>)
+    const urlProjects = 'http://localhost:4000/data/projects.json'
+    const projectNumberOne = "1";
+    const projectNumberTwo = "2";
 
     const projectClass2 = 'projects-text';
     const classTwo = 'project-two';
-    const titleTwo = ( <>Kasa |<strong> React</strong></>)
-    const urlProjectTwo = 'http://localhost:4000/data/project2.json'
+    const titleTwo = ( <>Project Kasa |<strong> React</strong></>)
     const class1 = 'home-content';
     const class2 = 'home-text';
     const text1 = (
@@ -55,7 +56,8 @@ export default function Home() {
             classTitle="project-one--title"
             title={titleOne}
             classProject="project-one--image"
-            jsonUrl={urlProjectOne}
+            jsonUrl={urlProjects}
+            projectNumber={projectNumberOne}
           />
           <Content
             class1={projectsClass1}
@@ -67,7 +69,8 @@ export default function Home() {
             classTitle="project-two--title"
             title={titleTwo}
             classProject="project-two--image"
-            jsonUrl={urlProjectTwo}
+            jsonUrl={urlProjects}
+            projectNumber={projectNumberTwo}
           />
         </div>
       </>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../assets/scss/components/Projects.scss';
 
-export default function Projects({ className, classTitle, title, classProject, jsonUrl }) {
+export default function Projects({ className, classTitle, title, classProject, jsonUrl, projectNumber }) {
     const [isVisible, setIsVisible] = useState(false);
     const [projects, setProjects] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,7 +30,8 @@ export default function Projects({ className, classTitle, title, classProject, j
 
     // Ouvrir la modale pour une image spécifique
     const openModal = (index) => {
-        setCurrentIndex(index);
+        const filteredProjects = projects.filter(project => project.project === projectNumber);
+        setCurrentIndex(index);  // index relatif aux projets filtrés
         setIsModalOpen(true);
     };
 
@@ -40,44 +41,52 @@ export default function Projects({ className, classTitle, title, classProject, j
     // Aller à l'image précédente
     const prevImage = (e) => {
         e.stopPropagation(); // Empêche la fermeture de la modale
-        setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : projects.length - 1));
+        const filteredProjects = projects.filter(project => project.project === projectNumber);
+        setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : filteredProjects.length - 1));
     };
 
     // Aller à l'image suivante
     const nextImage = (e) => {
         e.stopPropagation(); // Empêche la fermeture de la modale
-        setCurrentIndex((prevIndex) => (prevIndex < projects.length - 1 ? prevIndex + 1 : 0));
+        const filteredProjects = projects.filter(project => project.project === projectNumber);
+        setCurrentIndex((prevIndex) => (prevIndex < filteredProjects.length - 1 ? prevIndex + 1 : 0));
     };
 
     return (
         <section className={className}>
             <h1 className={`${classTitle} ${isVisible ? 'isVisible' : ''}`}>{title}</h1>
 
-            {projects.map((project, index) => (
-                <article key={index} className={`${classProject} ${isVisible ? 'isVisible' : ''}`}>
-                    <img
-                        src={`http://localhost:4000/images/${project.imageUrl}`}
-                        alt={project.name}
-                        onClick={() => openModal(index)} // Ouvre la modale au clic
-                        className="clickable-image"
-                    />
-                </article>
-            ))}
+            {/* Filtrer et rendre uniquement les projets correspondants à `projectNumber` */}
+            {projects
+                .filter(project => project.project === projectNumber) // Filtrer les projets ici
+                .map((project, index) => (
+                    <article key={index} className={`${classProject} ${isVisible ? 'isVisible' : ''}`}>
+                        <img
+                            src={`http://localhost:4000/images/${project.imageUrl}`}
+                            alt={project.name}
+                            onClick={() => openModal(index)} // Ouvre la modale au clic
+                            className="clickable-image"
+                        />
+                    </article>
+                ))
+            }
 
             {/* Modale d'affichage */}
             {isModalOpen && (
                 <div className="modal" onClick={closeModal}>
                     <span className="close" onClick={(e) => { e.stopPropagation(); closeModal(); }}>&times;</span>
 
-                    {/* Vérifiez que currentIndex est dans les limites */}
-                    {projects[currentIndex] && (
+                    {/* Vérifiez que currentIndex est dans les limites du tableau filtré */}
+                    {projects.filter(project => project.project === projectNumber)[currentIndex] && (
                         <div className="modal-content">
                             <img
-                                src={`http://localhost:4000/images/${projects[currentIndex].imageUrl}`}
-                                alt={projects[currentIndex].name}
+                                src={`http://localhost:4000/images/${projects.filter(project => project.project === projectNumber)[currentIndex].imageUrl}`}
+                                alt={projects.filter(project => project.project === projectNumber)[currentIndex].name}
                                 className="modal-image"
                             />
-                            <div className="caption">{currentIndex + 1} / {projects.length}</div>
+                            <div className="caption">
+                                {currentIndex + 1} / {projects.filter(project => project.project === projectNumber).length}
+                            </div>
                             <span className="prev" onClick={prevImage}>&#10094;</span>
                             <span className="next" onClick={nextImage}>&#10095;</span>
                         </div>
