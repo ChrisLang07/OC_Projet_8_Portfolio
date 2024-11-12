@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const formRoute = require('./routes/form');
-const imagesRoute = require('./routes/images');
+const projectsRoute = require('./routes/projectsRoute');
 
 // Connexion à MongoDB avec Mongoose
 mongoose.connect(process.env.MONGODB_URI, {
@@ -24,10 +24,9 @@ app.use((req, res, next) => {
 });
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
-app.use('/data', express.static(path.join(__dirname, 'data')));
 
 app.use('/api/contact', formRoute);
-app.use('/api', imagesRoute);
+app.use('/api', projectsRoute);
 
 
 

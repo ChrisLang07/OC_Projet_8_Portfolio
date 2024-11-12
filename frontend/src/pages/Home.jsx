@@ -9,7 +9,7 @@ export default function Home() {
     const projectsClass1 = 'projects-content';
     const classOne = 'project-one';
     const titleOne = ( <>Project Sophie Bluel |<strong> JavaScript</strong></>)
-    const urlProjects = 'http://localhost:4000/data/projects.json'
+    const urlProjects = process.env.REACT_APP_URL_PROJECTS;
     const projectNumberOne = "1";
     const projectNumberTwo = "2";
 
