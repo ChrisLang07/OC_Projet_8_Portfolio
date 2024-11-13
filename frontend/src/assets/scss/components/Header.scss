@@ -36,9 +36,12 @@ header {
 
         @media(max-width: 768px) {
             height: 200px;
-            width: 38%;
             justify-content: flex-start;
             padding-left: 10px;
         }
+    }
+
+    @media(max-width: 768px) {
+        height: 7svh;
     }
 }

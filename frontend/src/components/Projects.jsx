@@ -70,7 +70,6 @@ export default function Projects({ className, classTitle, title, classProject, j
             {isModalOpen && (
                 <div className="modal" onClick={closeModal}>
                     <span className="close" onClick={(e) => { e.stopPropagation(); closeModal(); }}>&times;</span>
-
                     {filteredProjects[currentIndex] && (
                         <div className="modal-content">
                             <img
