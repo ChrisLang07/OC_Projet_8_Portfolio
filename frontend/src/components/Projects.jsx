@@ -54,18 +54,19 @@ export default function Projects({ className, classTitle, title, classProject, j
 
     return (
         <section className={className}>
-            <h1 className={`${classTitle} ${isVisible ? 'isVisible' : ''}`}>{title}</h1>
-
+            <h1 className={`${classTitle} ${isVisible ? 'isvisible' : ''}`}>{title}</h1>
+            <div className={`all ${isVisible ? 'isvisible' : ''}`}> 
             {filteredProjects.map((project, index) => (
-                <article key={index} className={`${classProject} ${isVisible ? 'isVisible' : ''}`}>
+                <article key={index} className={classProject}>
                     <img
-                        src={`${process.env.REACT_APP_URL_BACKEND}/images/${project.imageUrl}`}  // Assurez-vous que les images sont bien dans le dossier /images du backend
+                        src={`${process.env.REACT_APP_URL_BACKEND}/images/${project.imageUrl}`}  
                         alt={project.name}
                         onClick={() => openModal(index)} // Ouvre la modale
                         className="clickable-image"
                     />
                 </article>
             ))}
+            </div>
 
             {isModalOpen && (
                 <div className="modal" onClick={closeModal}>

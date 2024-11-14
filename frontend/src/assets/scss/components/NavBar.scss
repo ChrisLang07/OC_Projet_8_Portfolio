@@ -84,6 +84,7 @@
 
         &:not(.open) {
             background-color: transparent;
+            width: 0;
         }
 
         .navbar-hamburger {
