@@ -10,7 +10,7 @@ export default function NavBar() {
 
 
     return (
-      <div className="navbar">
+      <div className={`navbar ${isOpen ? "open" : ""}`}>
         <nav
           className={`navbar-hamburger ${isOpen ? "open" : ""}`}
           onClick={toggleMenu}

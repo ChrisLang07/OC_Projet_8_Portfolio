@@ -1,4 +1,5 @@
 .skills {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,12 +72,18 @@
         }
 
         .skills-content {
-            width: 90%;
-
+            width: 80%;
+            
             .skills-text,
             .skills-list {
                 font-size: 14px;
             }
         }
+
+        
+
+        
+
+            
     }
 }
