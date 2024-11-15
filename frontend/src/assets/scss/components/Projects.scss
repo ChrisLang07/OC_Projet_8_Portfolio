@@ -68,7 +68,7 @@
 
                 .clickable-image {
                     height: 100%;
-                    width: 15svw;
+                    max-width: 15svw;
                     object-fit: cover;
                     border-radius: 10px;
                     filter: grayscale(90%);
