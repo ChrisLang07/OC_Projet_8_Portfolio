@@ -115,13 +115,23 @@
         .modal-content {
             text-align: center;
 
-            .modal-image {
-                width: 70%;
-            }
-
+            .modal-image--name,
             .caption {
+                font-size: 18px;
                 font-weight: 500;
                 color: white;
+
+                @media (max-width: 1024px) {
+                    font-size: 16px;
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
+            }
+
+            .modal-image {
+                width: 70%;
             }
         }
     }
@@ -145,14 +155,14 @@
         color: white;
         background: none;
         border: none;
-    }
 
-    .prev {
-        left: 10px;
-    }
+        &.prev {
+            left: 10px;
+        }
 
-    .next {
-        right: 10px;
+        &.next {
+            right: 10px;
+        }
     }
 
     .projects-content {

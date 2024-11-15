@@ -73,6 +73,7 @@ export default function Projects({ className, classTitle, title, classProject, j
                     <span className="close" onClick={(e) => { e.stopPropagation(); closeModal(); }}>&times;</span>
                     {filteredProjects[currentIndex] && (
                         <div className="modal-content">
+                            <h2 className='modal-image--name'>{filteredProjects[currentIndex].description}</h2>
                             <img
                                 src={`${process.env.REACT_APP_URL_BACKEND}/images/${filteredProjects[currentIndex].imageUrl}`}
                                 alt={filteredProjects[currentIndex].name}
