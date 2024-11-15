@@ -10,11 +10,11 @@ export default function Header() {
   const handleScrolly = () => {
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY > 0 && currentScrollY < 800) {
+    if (currentScrollY > 0 && currentScrollY < 500) {
       setIsVisible(false);
       setBackGrndOn(false);
     
-    } else if (currentScrollY > 800) {
+    } else if (currentScrollY > 500) {
      setIsVisible(true);
      setBackGrndOn(true);
 

@@ -1,26 +1,45 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import '../assets/scss/components/NavBar.scss';
 
 export default function NavBar() {
-    const[isOpen, setIsOpen] = useState(false);
-    const toggleMenu = () => {
-      setIsOpen(!isOpen)
+    const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef(null);
+
+    // Fonction pour basculer l'état du menu (ouvert/fermé)
+    const toggleMenu = (event) => {
+      event.stopPropagation();
+      setIsOpen(!isOpen);
     };
 
+    // Fonction pour fermer le menu si un clic extérieur est détecté
+    const closeMenuIfClickedOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    useEffect(() => {
+      document.addEventListener('click', closeMenuIfClickedOutside);
+  
+      return () => {
+        document.removeEventListener('click', closeMenuIfClickedOutside);
+      };
+    }, []);
 
     return (
       <div className={`navbar ${isOpen ? "open" : ""}`}>
         <nav
           className={`navbar-hamburger ${isOpen ? "open" : ""}`}
           onClick={toggleMenu}
+          aria-expanded={isOpen ? "true" : "false"}  
         >
           <span className="line"></span>
           <span className="line"></span>
           <span className="line"></span>
         </nav>
 
-        <nav className={`navbar-links ${isOpen ? "open" : ""}`}>
+        <nav ref={menuRef} className={`navbar-links ${isOpen ? "open" : ""}`}>
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -56,4 +75,4 @@ export default function NavBar() {
         </nav>
       </div>
     );
-};
+}
