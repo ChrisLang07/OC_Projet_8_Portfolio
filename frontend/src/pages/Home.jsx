@@ -15,7 +15,7 @@ export default function Home() {
 
   const projectClass2 = 'projects-text';
   const classTwo = 'project-two';
-  const titleTwo = ( <>Project Kasa |<strong> React Node.js * Express.js * MongoDB</strong></>);
+  const titleTwo = ( <>Project Mon vieux grimoire |<strong> React * Node.js * Express.js * MongoDB</strong></>);
   const class1 = 'home-content';
   const class2 = 'home-text';
   const text1 = (

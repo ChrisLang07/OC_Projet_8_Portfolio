@@ -46,7 +46,7 @@
         .all {
             display: flex;
             justify-content: space-around;
-            height: 95%;
+            align-items: center;
             width: 100%;
             position: relative;
             transition: opacity 0.5s;
@@ -67,8 +67,9 @@
                 border-radius: 10px;
 
                 .clickable-image {
+                    height: 100%;
+                    width: 15svw;
                     object-fit: cover;
-                    width: 65%;
                     border-radius: 10px;
                     filter: grayscale(90%);
                     background: linear-gradient(to right, #f05053, #e1eec3);
@@ -96,7 +97,7 @@
         }
 
         @media (max-width: 768px) {
-            height: 15svh;
+            height: 25svh;
         }
     }
 
