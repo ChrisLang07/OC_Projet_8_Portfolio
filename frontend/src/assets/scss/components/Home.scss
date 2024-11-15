@@ -1,14 +1,13 @@
 .home {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-end;
-	position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    position: fixed;
     max-width: 1440px;
-	gap: 20px;
-	top: 50%;
-	transform: translateY(-50%);
-
+    gap: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 
     .home-content {
         display: flex;
@@ -20,6 +19,7 @@
             font-weight: 300;
             text-align: justify;
             color: white;
+            transition: font-size 0.3s ease, text-align 0.3s ease, background-color 0.3s ease;
 
             @media (max-width: 1024px) {
                 font-size: 16px;
@@ -37,7 +37,7 @@
     }
 
     @media (max-width: 768px) {
-        gap: 0px;
+        gap: 0;
         .home-content {
             width: 90%;
         }

@@ -19,7 +19,6 @@
         height: 30svh;
         width: 100%;
 
-
         .project-one--title,
         .project-two--title {
             font-size: 18px;
@@ -39,7 +38,7 @@
                 transform: translateX(-100vw);
             }
 
-            @media(max-width: 768px) {
+            @media (max-width: 768px) {
                 font-size: 14px;
             }
         }
@@ -50,18 +49,16 @@
             height: 95%;
             width: 100%;
             position: relative;
-            
+            transition: opacity 0.5s;
 
             &.isvisible {
-                transition: opacity 2s ease-in-out;
                 opacity: 1;
+                transition-duration: 2s;
             }
 
             &:not(.isvisible) {
-                transition: opacity 0.5s;
                 opacity: 0;
             }
-
 
             .project-one--image,
             .project-two--image {
@@ -81,7 +78,7 @@
                         cursor: pointer;
                     }
 
-                    @media(max-width: 768px) {
+                    @media (max-width: 768px) {
                         width: 90%;
                         padding: 2px;
                     }
@@ -92,16 +89,15 @@
                     color: white;
                 }
 
-                @media(max-width: 768px) {
+                @media (max-width: 768px) {
                     height: 75%;
                 }
             }
         }
 
-        @media(max-width: 768px) {
+        @media (max-width: 768px) {
             height: 15svh;
         }
-
     }
 
     .modal {
@@ -119,7 +115,7 @@
             text-align: center;
 
             .modal-image {
-                width: 70%
+                width: 70%;
             }
 
             .caption {
@@ -128,8 +124,6 @@
             }
         }
     }
-
-
 
     .close {
         position: absolute;
@@ -160,7 +154,6 @@
         right: 10px;
     }
 
-
     .projects-content {
         text-align: center;
         width: 80%;
@@ -171,15 +164,13 @@
             color: white;
             margin: 0;
 
-            @media(max-width: 1024px) {
+            @media (max-width: 1024px) {
                 font-size: 16px;
-                ;
             }
 
-            @media(max-width: 768px) {
+            @media (max-width: 768px) {
                 font-size: 14px;
             }
         }
     }
-
 }

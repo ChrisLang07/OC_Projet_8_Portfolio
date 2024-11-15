@@ -8,6 +8,7 @@
     flex-grow: 1;
     gap: 20px;
 
+    /* .about-title - Styles généraux */
     .about-title {
         width: 50%;
         margin: 0;
@@ -15,7 +16,7 @@
         font-weight: 300;
         line-height: 100px;
         text-align: center;
-        position:relative;
+        position: relative;
         left: -100vw;
         color: white;
 
@@ -24,6 +25,7 @@
             transition: transform 2s ease;
         }
 
+        /* Media queries spécifiques pour .about-title */
         @media (max-width: 1024px) {
             font-size: 40px;
         }
@@ -34,9 +36,11 @@
         }
     }
 
+    /* .about-content - Styles généraux */
     .about-content {
         width: 50%;
 
+        /* .about-title et .about-text Propriétés partagées */
         .about-title,
         .about-text {
             color: white;
@@ -53,6 +57,7 @@
                 opacity: 1;
             }
 
+            /* Media queries spécifiques pour .about-text */
             @media (max-width: 1024px) {
                 font-size: 16px;
                 padding: 10px;
@@ -64,12 +69,12 @@
             }
         }
 
-        @media(max-width: 768px) {
+        @media (max-width: 768px) {
             width: 80%;
         }
     }
 
-    /* Responsive styles */
+    /* Styles responsive pour .about */
     @media (max-width: 1024px) {
         align-items: flex-end;
         gap: 0;

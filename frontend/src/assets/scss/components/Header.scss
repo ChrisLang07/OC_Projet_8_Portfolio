@@ -1,19 +1,19 @@
 header {
     margin: 0 auto;
     max-width: 1440px;
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    transition: top 0.3s ease;
     z-index: 1000;
+    transition: top 0.3s ease, background-color 0.3s ease;
 
     &.visible {
         top: 0;
     }
 
     &:not(.visible) {
-        top: -100px; 
+        top: -100px;
     }
 
     &.background-on {
@@ -29,19 +29,20 @@ header {
         justify-content: flex-end;
         align-items: center;
         height: 7vh;
+        transition: height 0.3s ease;
 
-        @media(max-width: 1024px) {
+        @media (max-width: 1024px) {
             padding-right: 20px;
         }
 
-        @media(max-width: 768px) {
+        @media (max-width: 768px) {
             height: 100%;
             align-items: flex-start;
             justify-content: flex-start;
         }
     }
 
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
         height: 100%;
         width: 50%;
         margin: 0;

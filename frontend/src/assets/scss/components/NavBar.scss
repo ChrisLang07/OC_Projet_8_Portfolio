@@ -5,7 +5,7 @@
         display: none;
         flex-direction: column;
         cursor: pointer;
-        
+
         .line {
             width: 25px;
             height: 3px;
@@ -23,19 +23,17 @@
             }
         }
 
-        &.open {
-            .line {
-                &:nth-child(1) {
-                    transform: rotate(45deg) translate(0, 15px);
-                }
+        &.open .line {
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(0, 15px);
+            }
 
-                &:nth-child(2) {
-                    opacity: 0;
-                }
+            &:nth-child(2) {
+                opacity: 0;
+            }
 
-                &:nth-child(3) {
-                    transform: rotate(-45deg) translate(0, -15px);
-                }
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(0, -15px);
             }
         }
     }
@@ -103,6 +101,4 @@
             }
         }
     }
-
-    
 }

@@ -1,6 +1,13 @@
 .nopage {
-    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
     position: relative;
+    flex-grow: 1;
+    gap: 20px;
+    padding-right: 25px;
 
     .number,
     .oups {
@@ -11,9 +18,29 @@
     .number {
         font-size: 33vh;
         margin: 0;
+
+        @media (max-width: 1024px) {
+            font-size: 25svh;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 10svh;
+        }
     }
 
     .oups {
         font-size: 50px;
+
+        @media (max-width: 1024px) {
+            font-size: 30px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        align-items: center;
     }
 }

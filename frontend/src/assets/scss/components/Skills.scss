@@ -18,10 +18,10 @@
         position: relative;
         left: -100vw;
         color: white;
+        transition: transform 2s ease;
 
         &.visible {
             transform: translateX(100vw);
-            transition: transform 2S ease;
         }
     }
 
@@ -73,18 +73,12 @@
 
         .skills-content {
             width: 80%;
-            
+
             .skills-text,
             .skills-list {
                 font-size: 14px;
                 background-color: rgba(0, 0, 0, 0.5);
             }
         }
-
-        
-
-        
-
-            
     }
 }

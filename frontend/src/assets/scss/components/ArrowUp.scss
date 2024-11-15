@@ -5,16 +5,17 @@
     color: white;
     position: relative;
     top: 0;
-    left: 25%;
+    right: 60%;
     animation: moveUp 2s ease-in-out infinite;
 
-    .arrow-up--line {
+    // Eléments de flèche
+    &--line {
         height: 35px;
         width: 1px;
         border-left: 2px dashed white;
     }
 
-    .arrow-up--head {
+    &--head {
         display: inline-block;
         transform: scaleY(-1);
         font-size: 24px;
@@ -26,11 +27,11 @@
     }
 }
 
+// Animation
 @keyframes moveUp {
     0% {
         transform: translateY(-50px);
     }
-
     100% {
         transform: translateY(-400px);
     }
