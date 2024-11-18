@@ -1,3 +1,4 @@
+// Styles pour la flèche d'animation vers le haut
 .arrow-up {
     display: flex;
     flex-direction: column;
@@ -8,26 +9,28 @@
     right: 60%;
     animation: moveUp 2s ease-in-out infinite;
 
-    // Eléments de flèche
+    // Style pour la ligne de la flèche
     &--line {
         height: 35px;
         width: 1px;
         border-left: 2px dashed white;
     }
 
+    // Style pour la ligne de la flèche
     &--head {
         display: inline-block;
         transform: scaleY(-1);
         font-size: 24px;
         font-weight: 400;
     }
-
+    
+    // Media query pour les écrans avec une largeur maximale de 768px (smartphones et tablettes)
     @media (max-width: 768px) {
         left: 95%;
     }
 }
 
-// Animation
+// Animation moveUp - Définition de l'animation pour la flèche
 @keyframes moveUp {
     0% {
         transform: translateY(-50px);

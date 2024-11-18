@@ -1,3 +1,4 @@
+// Style général pour le pied de page
 .footer {
     display: flex;
     justify-content: flex-end;
@@ -6,12 +7,14 @@
     position: fixed;
     bottom: 0;
 
+    // Contenu principal du footer
     .footer-content {
         display: flex;
         justify-content: center;
         gap: 20px;
         width: 50%;
 
+        // Texte à l'intérieur du footer
         .footer-text {
             font-size: 16px;
             text-align: center;
@@ -19,11 +22,13 @@
             background-color: rgba(0, 0, 0, 0.5);
             transition: font-size 0.3s ease;
 
+            // Media querie pour ajuster la taille de la police
             @media (max-width: 1024px) {
                 font-size: 14px;
             }
         }
 
+        // Media query pour ajuster la largeur du contenu 
         @media (max-width: 768px) {
             width: 80%;
         }
@@ -33,6 +38,7 @@
         justify-content: flex-end;
     }
 
+     // Media queries pour ajuster la position du footer 
     @media (max-width: 768px) {
         justify-content: center;
     }

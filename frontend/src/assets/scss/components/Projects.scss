@@ -1,3 +1,4 @@
+// Style général de la section "projects" (Page d'accueil)
 .projects {
     display: flex;
     flex-direction: column;
@@ -10,6 +11,7 @@
     background-color: black;
     z-index: 10;
 
+    // Styles communs aux projets
     .project-one,
     .project-two {
         display: flex;
@@ -19,6 +21,7 @@
         height: 30svh;
         width: 100%;
 
+        // Styles communs pour les titres des projets
         .project-one--title,
         .project-two--title {
             font-size: 18px;
@@ -30,19 +33,22 @@
             border: 1px solid white;
             transition: transform 3s ease;
 
+            // Quand la classe 'visible' est ajoutée
             &.isvisible {
                 transform: translateX(0);
             }
 
+            // Quand la classe 'visible' n'est pas présente
             &:not(.isvisible) {
                 transform: translateX(-100vw);
             }
-
+            // Media query pour les écrans avec une largeur maximale de 768px (smartphones)
             @media (max-width: 768px) {
                 font-size: 14px;
             }
         }
 
+        // Conteneur pour le contenu d'un projet
         .all {
             display: flex;
             justify-content: space-around;
@@ -51,21 +57,25 @@
             position: relative;
             transition: opacity 0.5s;
 
+            // Quand la classe 'visible' est ajoutée
             &.isvisible {
                 opacity: 1;
                 transition-duration: 2s;
             }
 
+            // Quand la classe 'visible' n'est pas présente
             &:not(.isvisible) {
                 opacity: 0;
             }
 
+            // Conteneur pour les images des projets
             .project-one--image,
             .project-two--image {
                 height: 80%;
                 margin-top: 30px;
                 border-radius: 10px;
 
+                // Style pour les images cliquables
                 .clickable-image {
                     height: 100%;
                     max-width: 15svw;
@@ -75,32 +85,38 @@
                     background: linear-gradient(to right, #f05053, #e1eec3);
                     padding: 5px;
 
+                    // Effet au survol
                     &:hover {
                         cursor: pointer;
                     }
 
+                    // Adaptation pour les petits écrans
                     @media (max-width: 768px) {
                         width: 90%;
                         padding: 2px;
                     }
                 }
 
+                // Style pour les titres des images
                 .clickable-image--title {
                     font-size: 15px;
                     color: white;
                 }
 
+                // Adaptation pour les petits écrans
                 @media (max-width: 768px) {
                     height: 75%;
                 }
             }
         }
 
+        // Adaptation pour les petits écrans
         @media (max-width: 768px) {
             height: 25svh;
         }
     }
 
+    // Style pour la fenêtre modale
     .modal {
         display: flex;
         align-items: center;
@@ -112,6 +128,7 @@
         background-color: rgba(0, 0, 0, 0.7);
         z-index: 1000;
 
+        // Contenu de la modale
         .modal-content {
             text-align: center;
 
@@ -121,21 +138,25 @@
                 font-weight: 500;
                 color: white;
 
+                // Adaptation pour les écrans moyens
                 @media (max-width: 1024px) {
                     font-size: 16px;
                 }
-
+                
+                // Adaptation pour les petits écrans
                 @media (max-width: 768px) {
                     font-size: 14px;
                 }
             }
 
+            // Image affichée dans la modale
             .modal-image {
-                width: 70%;
+                width: 80%;
             }
         }
     }
 
+    // Bouton pour fermer la modale
     .close {
         position: absolute;
         top: 10px;
@@ -145,6 +166,7 @@
         cursor: pointer;
     }
 
+    // Boutons pour naviguer entre les images
     .prev,
     .next {
         cursor: pointer;
@@ -156,29 +178,35 @@
         background: none;
         border: none;
 
+        // Bouton précédent
         &.prev {
             left: 10px;
         }
 
+        // Bouton suivant
         &.next {
             right: 10px;
         }
     }
 
+    // Conteneur pour le texte des projets
     .projects-content {
         text-align: center;
         width: 80%;
 
+        // Texte des projets
         .projects-text {
             font-size: 18px;
             font-weight: 300;
             color: white;
             margin: 0;
 
+            // Adaptation pour les écrans moyens
             @media (max-width: 1024px) {
                 font-size: 16px;
             }
 
+            // Adaptation pour les petits écrans
             @media (max-width: 768px) {
                 font-size: 14px;
             }

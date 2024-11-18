@@ -1,3 +1,4 @@
+// Conteneur principal du formulaire de contact
 .contact {
     overflow: hidden;
     width: 100%;
@@ -7,6 +8,7 @@
     flex-direction: column;
     justify-content: center;
 
+    // Formulaire de contact
     form {
         display: flex;
         flex-direction: column;
@@ -15,7 +17,7 @@
         position: relative;
         gap: 20px;
 
-        // Form title
+        // Titre du formulaire
         .form-title {
             width: 50%;
             margin: 0;
@@ -28,10 +30,12 @@
             color: white;
             transition: transform 2s ease;
 
+            // Transition lorsque la classe "visible" est ajoutée
             &.visible {
                 transform: translateX(100vw);
             }
 
+             // Media queries pour le titre
             @media (max-width: 1024px) {
                 font-size: 40px;
             }
@@ -41,7 +45,7 @@
             }
         }
 
-        // Form content
+        // Contenu du formulaire (les champs du formulaire et le bouton de soumission)
         .form-content {
             display: flex;
             flex-direction: column;
@@ -51,11 +55,12 @@
             opacity: 0;
             transition: opacity 3s ease-in-out;
 
+            // Opacité lorsque la classe "visible" est ajoutée
             &.visible {
                 opacity: 1;
             }
 
-            // Form fields
+            // Champs de saisie du formulaire et message
             .form-input,
             .form-message {
                 display: flex;
@@ -68,6 +73,7 @@
                     color: white;
                     font-size: 16px;
 
+                    // Media queries pour le label
                     @media (max-width: 768px) {
                         font-size: 16px !important;
                     }
@@ -78,6 +84,7 @@
                     font-size: 16px;
                 }
 
+                // Media queries pour la zone de saisie du message
                 @media (max-width: 1024px) {
                     width: 50vw;
                 }
@@ -87,7 +94,7 @@
                 }
             }
 
-            // Submit button
+            // Bouton de soumission du formulaire
             .form-submit {
                 display: flex;
                 align-items: center;
@@ -104,11 +111,12 @@
                     color: white;
                     transition: ease 0.5s;
 
+                    // Styles au survol du bouton de soumission du formulaire
                     &:hover {
                         border: 1px solid white;
                         cursor: pointer;
                     }
-
+                    // Media querie pour le bouton de soumission du formulaire
                     @media (max-width: 768px) {
                         font-size: 16px;
                     }
@@ -120,7 +128,7 @@
             }
         }
 
-        // Success message
+        // Message de succès à la soumission du formulaire
         .success-message {
             color: white;
             display: flex;
@@ -133,12 +141,13 @@
             border: 1px solid white;
             font-weight: 500;
 
+            // Media queries pour la fenêtre du message de succès
             @media (max-width: 768px) {
                 font-size: 14px;
             }
         }
 
-        // Close button
+        // Bouton fermer
         .close-button {
             background-color: black;
             border: 1px solid transparent;
@@ -149,6 +158,7 @@
             padding: 0 10px;
             transition: border 0.7s ease;
 
+            //Styles au survol du bouton fermer
             &:hover {
                 border: 1px solid white;
                 cursor: pointer;
@@ -164,6 +174,7 @@
             height: 40px;
             animation: spin 1s linear infinite;
 
+             // Media queries pour le loading spinner
             @media (max-width: 1024px) {
                 width: 30px;
                 height: 30px;
@@ -175,12 +186,12 @@
             }
         }
 
-        // Smartphone responsive
+         // Media querie pour le formulaire de contact
         @media (max-width: 768px) {
             align-items: center;
         }
 
-        // Keyframes
+        // Animation spin - Définition de l'animation du loading spinner
         @keyframes spin {
             0% {
                 transform: rotate(0deg);

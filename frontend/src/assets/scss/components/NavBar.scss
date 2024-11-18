@@ -1,11 +1,14 @@
+// Style général de la barre de navigation
 .navbar {
     width: 50%;
 
+    // Style pour le bouton hamburger (icône menu mobile)
     .navbar-hamburger {
         display: none;
         flex-direction: column;
         cursor: pointer;
 
+        //  Style des lignes de l'icône du hamburger
         .line {
             width: 25px;
             height: 3px;
@@ -13,40 +16,48 @@
             background-color: white !important;
             transition: transform 0.5s ease, opacity 0.5s ease;
 
+             // Styles pour la première et la troisième ligne du hamburger
             &:nth-child(1),
             &:nth-child(3) {
                 transform: rotate(0) translate(0, 0);
             }
 
+            // Style pour la ligne du milieu (2ème ligne)
             &:nth-child(2) {
                 opacity: 1;
             }
         }
 
+        // Quand le menu hamburger est ouvert, les lignes de l'icône se transforment
         &.open .line {
+            // Transformation pour la première ligne
             &:nth-child(1) {
                 transform: rotate(45deg) translate(0, 15px);
             }
 
+            // La ligne du milieu devient invisible
             &:nth-child(2) {
                 opacity: 0;
             }
 
+            // Transformation pour la troisième ligne
             &:nth-child(3) {
                 transform: rotate(-45deg) translate(0, -15px);
             }
         }
     }
-
+     // Style pour les liens de navigation
     .navbar-links {
         display: flex;
         justify-content: space-between;
         transition: transform 0.5s ease;
 
+        // Lorsque le menu est ouvert
         &.open {
             transform: translate(10px);
         }
 
+        // Style pour chaque lien de navigation
         .navbar-link {
             text-decoration: none;
             font-size: 20px;
@@ -57,6 +68,7 @@
             border-right: 1px solid white;
             transition: border 0.7s ease;
 
+            // Effet au survol, au focus ou lorsque le lien est actif
             &:hover,
             &:focus,
             &.active {
@@ -65,36 +77,42 @@
         }
     }
 
-    /* Responsive styles */
+    // Media query pour les écrans avec une largeur maximale de 1024px (tablettes et petits écrans)
     @media (max-width: 1024px) {
         .navbar-links .navbar-link {
             font-size: 16px;
         }
     }
 
+    // Media query pour les écrans avec une largeur maximale de 768px (smartphones)
     @media (max-width: 768px) {
         height: 100%;
         position: fixed;
 
+        // Quand le menu hamburger est ouvert, le fond devient noir
         &.open {
             background-color: black;
         }
 
+        // Lorsque le menu n'est pas ouvert, le fond est transparent et la largeur est réduite à zéro
         &:not(.open) {
             background-color: transparent;
             width: 0;
         }
 
+        // Le bouton hamburger devient visible et reçoit du padding pour un meilleur confort
         .navbar-hamburger {
             display: flex;
             padding: 20px;
         }
 
+        //  Les liens deviennent verticaux et sont déplacés hors de l'écran par défaut
         .navbar-links {
             flex-direction: column;
             gap: 70px;
             transform: translate(-150px);
 
+            // Les liens sont réduits à une largeur de 80px pour mieux s'adapter aux petits écrans
             .navbar-link {
                 font-size: 16px;
                 width: 80px;

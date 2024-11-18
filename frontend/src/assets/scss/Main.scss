@@ -1,24 +1,30 @@
+// Importation des polices depuis Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
+// Conteneur principal : définit les styles généraux pour la classe .container
 .container {
     box-sizing: border-box;
     padding-right: 10vh;
     font-family: 'Fira Code', monospace;
 
+    // Pour les écrans avec une largeur maximale de 1024px (desktop)
     @media (max-width: 1024px) {
         padding-right: 20px;
     }
 
+     // Media query pour les écrans avec une largeur maximale de 768px (smartphones et tablettes)
     @media (max-width: 768px) {
         padding-right: 0;
     }
 }
 
+// Style général du body
 body {
     background: black;
 }
 
+// Styles appliqués à l'élément #root
 #root {
     height: 100svh;
     display: flex;
@@ -32,6 +38,7 @@ body {
     background-position: top;
     background-attachment: fixed;
 
+   // Media query pour les écrans avec une largeur maximale de 768px (smartphones et tablettes)
     @media (max-width: 768px) {
         gap: 20px;
     }

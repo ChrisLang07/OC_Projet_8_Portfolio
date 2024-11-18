@@ -6,18 +6,21 @@ import '../assets/scss/Main.scss';
 import '../assets/scss/components/Home.scss';
 
 export default function Home() {
-  const projectsClass1 = 'projects-content';
-  const classOne = 'project-one';
-  const titleOne = ( <>Project Sophie Bluel |<strong> HTML5 * CSS3 * JavaScript</strong></>);
-  const urlProjects = process.env.REACT_APP_URL_PROJECTS;
-  const projectNumberOne = "1";
-  const projectNumberTwo = "2";
+  // Déclaration des classes et contenus pour les sections "Projets"
+  const projectsClass1 = 'projects-content'; // Classe pour la section contenant tous les projets
+  const classOne = 'project-one'; // Classe pour le premier projet
+  const titleOne = ( <>Project Sophie Bluel |<strong> HTML5 * CSS3 * JavaScript</strong></>); // Titre du premier projet
+  const urlProjects = process.env.REACT_APP_URL_PROJECTS; // URL des projets, défini dans les variables d'environnement
+  const projectNumberOne = "1"; // Numéro du premier projet
+  const projectNumberTwo = "2"; // Numéro du deuxième projet
 
-  const projectClass2 = 'projects-text';
-  const classTwo = 'project-two';
-  const titleTwo = ( <>Project Mon vieux grimoire |<strong> React * Node.js * Express.js * MongoDB</strong></>);
-  const class1 = 'home-content';
-  const class2 = 'home-text';
+  const projectClass2 = 'projects-text'; // Classe pour la description des projets
+  const classTwo = 'project-two'; // Classe pour le deuxième projet
+  const titleTwo = ( <>Project Mon vieux grimoire |<strong> React * Node.js * Express.js * MongoDB</strong></>); // Titre du deuxième projet
+
+  // Déclaration des classes et du texte pour la section "Home"
+  const class1 = 'home-content'; // Classe pour la section principale de la page d'accueil
+  const class2 = 'home-text'; // Classe pour le texte de la page d'accueil
   const text1 = (
     <>
       Développeur web passionné spécialisé dans la création de sites et
@@ -30,7 +33,8 @@ export default function Home() {
       <br />
       <strong>Contactez-moi, je serai ravi de collaborer avec vous !</strong>
     </>
-  );
+  ); // Premier bloc de texte de présentation
+
   const text2 = (
     <>
     J'ai réalisé plusieurs projets en utilisant mes compétences techniques en HTML5, CSS3 et JavaScript 
@@ -41,16 +45,21 @@ export default function Home() {
     Ces projets m'ont permis de renforcer ma maîtrise des technologies web modernes et de développer des solutions 
     complètes et évolutives.
     </>
-  );
+  ); // Deuxième bloc de texte expliquant l'expérience et les projets réalisés
 
   return (
     <>
+     {/* Section d'accueil avec l'animation de la flèche et le texte animé */}
       <div className="container home">
         <ArrowDown />
         <TypingEffect />
         <Content class1={class1} class2={class2} text={text1} />
       </div>
+
+      {/* Section des projets */}
       <div className="container projects">
+         
+         {/* Affichage du premier projet avec ses détails */}
         <Projects
           className={classOne}
           classTitle="project-one--title"
@@ -59,11 +68,15 @@ export default function Home() {
           jsonUrl={urlProjects}
           projectNumber={projectNumberOne}
         />
+
+        {/* Affichage du texte expliquant l'expérience et les projets réalisés */}
         <Content
           class1={projectsClass1}
           class2={projectClass2}
           text={text2}
         />
+
+         {/* Affichage du deuxième projet avec ses détails */}
         <Projects
           className={classTwo}
           classTitle="project-two--title"

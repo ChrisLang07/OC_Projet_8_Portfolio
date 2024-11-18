@@ -19,6 +19,7 @@ export default function NavBar() {
       }
     };
 
+    //Ajout d'un gestionnaire d'évenement
     useEffect(() => {
       document.addEventListener('click', closeMenuIfClickedOutside);
   
@@ -30,6 +31,7 @@ export default function NavBar() {
     return (
       <div className={`navbar ${isOpen ? "open" : ""}`}>
         <nav
+          role="button"
           className={`navbar-hamburger ${isOpen ? "open" : ""}`}
           onClick={toggleMenu}
           aria-expanded={isOpen ? "true" : "false"}  

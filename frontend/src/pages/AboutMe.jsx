@@ -3,6 +3,7 @@ import Content from '../components/Content';
 import '../assets/scss/components/About.scss';
 
 export default function About() {
+    // Déclaration des classes et du texte à afficher dans la section "About"
     const aboutClass1 = 'about-content';
     const aboutClass2 = 'about-text';
     const aboutText = (
@@ -18,8 +19,10 @@ export default function About() {
         </>
     );
 
+    // Déclaration de l'état pour gérer la visibilité du contenu avec animation
     const[isVisble, setIsVisible] = useState(false);
 
+    // Mise à jour de l'état au premier rendu du composant
     useEffect(() => {
         setIsVisible(true);
     }, []);

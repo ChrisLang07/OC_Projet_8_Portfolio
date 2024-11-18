@@ -1,3 +1,4 @@
+// Style principal pour l'écran de "page non trouvée" ou erreur 404
 .nopage {
     overflow: hidden;
     display: flex;
@@ -9,16 +10,19 @@
     gap: 20px;
     padding-right: 25px;
 
+    // Style pour le nombre affiché (par exemple, "404")
     .number,
     .oups {
         font-family: 'audiowide';
         color: white;
     }
 
+    // Style spécifique pour le nombre (grande taille de texte)
     .number {
         font-size: 33vh;
         margin: 0;
 
+        // Media queries pour ajuster la taille du texte sur les écrans plus petits
         @media (max-width: 1024px) {
             font-size: 25svh;
         }
@@ -28,9 +32,11 @@
         }
     }
 
+    // Style pour le message "Oups"
     .oups {
         font-size: 50px;
 
+        // Media queries pour ajuster la taille du texte sur les écrans plus petits
         @media (max-width: 1024px) {
             font-size: 30px;
         }
@@ -40,6 +46,7 @@
         }
     }
 
+    // Media query pour les écrans jusqu'à 768px (smartphones)
     @media (max-width: 768px) {
         align-items: center;
     }

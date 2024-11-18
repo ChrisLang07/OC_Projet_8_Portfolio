@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 
 export default function ContentList({ class1, class2, class3, class4, class5, text }) {
-    const [skills, setSkills] = useState([]);
+    const [skills, setSkills] = useState([]); 
     const url = '/data/skills.json';
 
+    // Récupération de la liste des Skills
     useEffect(() => {
         fetch(url)
         .then((response) => {

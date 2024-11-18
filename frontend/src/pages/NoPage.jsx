@@ -1,4 +1,3 @@
-import ArrowUp from '../components/ArrowUp';
 import '../assets/scss/components/NoPage.scss';
 
 export default function NoPage() {
