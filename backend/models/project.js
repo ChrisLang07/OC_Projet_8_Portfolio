@@ -5,9 +5,13 @@ const projectSchema = new mongoose.Schema({
     project: { type: String, required: true },
     "project-title": { type: String, required: true },
     name: { type: String, required: true },
-    imageUrl: { type: String, required: true }, // URL de l'image
+    imageUrls: {
+        small: { type: String, required: true },
+        medium: { type: String, required: true },
+        large: { type: String, required: true }
+    },
     description: { type: String, required: true },
-    createdAt: { type: Date, default: Date.now } // Date de création automatique
+    createdAt: { type: Date, default: Date.now }
 });
 
 // Création du modèle
