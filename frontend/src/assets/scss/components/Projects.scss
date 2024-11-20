@@ -18,8 +18,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 30svh;
         width: 100%;
+        flex-grow: 1;
 
         // Styles communs pour les titres des projets
         .project-one--title,
@@ -111,7 +111,7 @@
 
         // Adaptation pour les petits écrans
         @media (max-width: 768px) {
-            height: 25svh;
+            height: 18svh;
         }
     }
 

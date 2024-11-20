@@ -32,6 +32,10 @@
             color: #f0a500;
           }
         }
+
+        strong {
+          margin-left: 4px;
+        } 
   
         // Media query pour ajuster la taille de la police
         @media (max-width: 1024px) {
