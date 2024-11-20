@@ -29,7 +29,7 @@ export default function Contact() {
 
         try {
             // Envoi de la requête POST vers l'API backend pour envoyer le message de contact
-            const response = await fetch('http://localhost:4000/api/contact', {
+            const response = await fetch(`${process.env.REACT_APP_URL_BACKEND}/api/contact`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
