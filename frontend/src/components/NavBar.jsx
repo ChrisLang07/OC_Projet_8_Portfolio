@@ -29,7 +29,7 @@ export default function NavBar() {
     }, []);
 
     return (
-      <div className={`navbar ${isOpen ? "open" : ""}`}>
+      <div className={`navbar ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
         <nav
           role="button"
           className={`navbar-hamburger ${isOpen ? "open" : ""}`}
