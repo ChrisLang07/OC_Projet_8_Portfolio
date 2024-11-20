@@ -54,6 +54,7 @@
             justify-content: space-around;
             align-items: center;
             width: 100%;
+            margin-top: 30px;
             position: relative;
             transition: opacity 0.5s;
 
@@ -71,23 +72,24 @@
             // Conteneur pour les images des projets
             .project-one--image,
             .project-two--image {
-                height: 80%;
-                margin-top: 30px;
                 border-radius: 10px;
+                overflow: hidden;
 
                 // Style pour les images cliquables
                 .clickable-image {
                     height: 100%;
                     width: 90%;
+                    padding: 5px;
                     object-fit: cover;
                     border-radius: 10px;
                     filter: grayscale(90%);
                     border: 2px solid black;
-                    padding: 5px;
+                    transition: transform 0.3s ease;
 
                     // Effet au survol
                     &:hover {
                         cursor: pointer;
+                        transform: scale(0.9);
                     }
 
                     // Adaptation pour les petits écrans
@@ -100,11 +102,6 @@
                 .clickable-image--title {
                     font-size: 15px;
                     color: white;
-                }
-
-                // Adaptation pour les petits écrans
-                @media (max-width: 768px) {
-                    height: 75%;
                 }
             }
         }
