@@ -1,1 +1,8 @@
+# Env files
 backend/.env
+frontend/.env
+frontend/.env.production
+frontend/.env.development
+
+# Garder le fichier exemple
+!.env.dist
