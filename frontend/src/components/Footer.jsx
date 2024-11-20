@@ -55,7 +55,7 @@ export default function Footer() {
         {isModalOpen && (
                     <>
                         <div className="modal-overlay" onClick={closeModal}></div>
-                        <div className="modal">
+                        <div className="footer-modal">
                             <span className="close" onClick={closeModal}>
                                 &times;
                             </span>

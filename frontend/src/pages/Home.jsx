@@ -7,20 +7,20 @@ import '../assets/scss/components/Home.scss';
 
 export default function Home() {
   // Déclaration des classes et contenus pour les sections "Projets"
-  const projectsClass1 = 'projects-content'; // Classe pour la section contenant tous les projets
-  const classOne = 'project-one'; // Classe pour le premier projet
-  const titleOne = ( <>Project Sophie Bluel |<strong> HTML5 * CSS3 * JavaScript</strong></>); // Titre du premier projet
-  const urlProjects = process.env.REACT_APP_URL_PROJECTS; // URL des projets, défini dans les variables d'environnement
-  const projectNumberOne = "1"; // Numéro du premier projet
-  const projectNumberTwo = "2"; // Numéro du deuxième projet
+  const projectsClass1 = 'projects-content'; 
+  const classOne = 'project-one'; 
+  const titleOne = ( <>Project Sophie Bluel |<strong> HTML5 * CSS3 * JavaScript</strong></>); 
+  const urlProjects = process.env.REACT_APP_URL_PROJECTS; 
+  const projectNumberOne = "1"; 
+  const projectNumberTwo = "2"; 
 
-  const projectClass2 = 'projects-text'; // Classe pour la description des projets
-  const classTwo = 'project-two'; // Classe pour le deuxième projet
+  const projectClass2 = 'projects-text'; 
+  const classTwo = 'project-two'; 
   const titleTwo = ( <>Project Mon vieux grimoire |<strong> React * Node.js * Express.js * MongoDB</strong></>); // Titre du deuxième projet
 
   // Déclaration des classes et du texte pour la section "Home"
-  const class1 = 'home-content'; // Classe pour la section principale de la page d'accueil
-  const class2 = 'home-text'; // Classe pour le texte de la page d'accueil
+  const class1 = 'home-content'; 
+  const class2 = 'home-text'; 
   const text1 = (
     <>
       Développeur web passionné spécialisé dans la création de sites et
