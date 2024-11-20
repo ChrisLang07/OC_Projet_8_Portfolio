@@ -65,8 +65,8 @@ export default function Projects({ className, classTitle, title, classProject, j
                             ${process.env.REACT_APP_URL_BACKEND}/images/${project.imageUrls.medium} 800w,
                             ${process.env.REACT_APP_URL_BACKEND}/images/${project.imageUrls.large} 1162w,
                         `}
-                        sizes="(max-width: 480px) 480px,
-                                (max-width: 800px) 800px,
+                        sizes="(max-width: 768px) 480px,
+                                (max-width: 1024px) 800px,
                                 1162px" 
                         alt={project.name}
                         onClick={() => openModal(index)} 
@@ -83,7 +83,7 @@ export default function Projects({ className, classTitle, title, classProject, j
                         <div className="modal-content">
                             <h2 className='modal-image--name'>{filteredProjects[currentIndex].description}</h2>
                             <img
-                                src={`${process.env.REACT_APP_URL_BACKEND}/images/${filteredProjects[currentIndex].imageUrls.large}`}
+                                src={`${process.env.REACT_APP_URL_BACKEND}/images/${filteredProjects[currentIndex].imageUrls.medium}`}
                                 srcSet={`
                                     ${process.env.REACT_APP_URL_BACKEND}/images/${filteredProjects[currentIndex].imageUrls.small} 480w,
                                     ${process.env.REACT_APP_URL_BACKEND}/images/${filteredProjects[currentIndex].imageUrls.medium} 800w,
