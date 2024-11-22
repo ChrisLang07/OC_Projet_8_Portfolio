@@ -56,18 +56,6 @@
             width: 100%;
             margin-top: 30px;
             position: relative;
-            transition: opacity 0.5s;
-
-            // Quand la classe 'visible' est ajoutée
-            &.isvisible {
-                opacity: 1;
-                transition-duration: 2s;
-            }
-
-            // Quand la classe 'visible' n'est pas présente
-            &:not(.isvisible) {
-                opacity: 0;
-            }
 
             // Conteneur pour les images des projets
             .project-one--image,
@@ -84,12 +72,43 @@
                     border-radius: 10px;
                     filter: grayscale(90%);
                     border: 2px solid black;
-                    transition: transform 0.3s ease;
+                    opacity: 0; 
+                    transform: translateX(100%);
+                    pointer-events: none;
+                    transition: 
+                        transform 1.5s ease-out, 
+                        opacity 1.5s ease-out;
+                    
+                    /* Quand l'image devient visible */
+                    &.isVisible {
+                        opacity: 1;
+                        transform: translateX(0);
+                        pointer-events: auto;
+                    }
 
-                    // Effet au survol
+                    &:not(.isVisible) {
+                        opacity: 0;
+                        transform: translateX(100%);
+                        pointer-events: none; 
+                        transition: 
+                            opacity 0.3s ease-out, 
+                            transform 0.5s ease-out;
+                    }
+
+                    /* Délai d'apparition des images */
+                    &.delay-0 { transition-delay: 0s; }
+                    &.delay-1 { transition-delay: 1s; }
+                    &.delay-2 { transition-delay: 1.5s; }
+                    &.delay-3 { transition-delay: 2s; }
+
+                    /* Effet au survol */
                     &:hover {
                         cursor: pointer;
-                        transform: scale(0.9);
+                        transform: scale(0.95); 
+                        filter: grayscale(0%); 
+                        transition: 
+                            transform 0.3s ease, 
+                            filter 0.3s ease; 
                     }
 
                     // Adaptation pour les petits écrans

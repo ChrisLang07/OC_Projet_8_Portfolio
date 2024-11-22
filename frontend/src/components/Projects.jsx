@@ -55,7 +55,7 @@ export default function Projects({ className, classTitle, title, classProject, j
     return (
         <section className={className}>
             <h1 className={`${classTitle} ${isVisible ? 'isvisible' : ''}`}>{title}</h1>
-            <div className={`all ${isVisible ? 'isvisible' : ''}`}> 
+            <div className="all"> 
             {filteredProjects.map((project, index) => (
                 <article key={index} className={classProject}>
                     <img
@@ -70,7 +70,7 @@ export default function Projects({ className, classTitle, title, classProject, j
                                 1162px" 
                         alt={project.name}
                         onClick={() => openModal(index)} 
-                        className="clickable-image"
+                        className={`clickable-image ${isVisible ? `isVisible delay-${index}` : ''}`}
                     />
                 </article>
             ))}
