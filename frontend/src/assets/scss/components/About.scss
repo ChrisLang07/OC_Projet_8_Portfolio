@@ -1,12 +1,11 @@
 // .about : Conteneur principal de la section "About"
 .about {
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     position: relative;
-    flex-grow: 1;
+    height:100svh;
     gap: 20px;
 
     // .about-title : Styles appliqués au titre dans la section "About"
@@ -17,14 +16,13 @@
         font-weight: 300;
         line-height: 100px;
         text-align: center;
-        position: relative;
-        left: -100vw;
+        opacity: 0;
         color: white;
+        transition: opacity 2s ease;
 
         // Transition lorsque la classe "visible" est ajoutée à .about-title
         &.visible {
-            transform: translateX(100vw);
-            transition: transform 2s ease;
+            opacity: 1;
         }
 
         // Pour les écrans avec une largeur maximale de 1024px (tablettes)

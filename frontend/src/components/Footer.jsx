@@ -21,7 +21,6 @@ export default function Footer() {
         >
           Politique de confidentialité
         </span>
-        <strong>*</strong> Conditions d'utilisation
       </>
     );
 

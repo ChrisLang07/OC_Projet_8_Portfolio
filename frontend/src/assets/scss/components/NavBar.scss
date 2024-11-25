@@ -46,7 +46,8 @@
             }
         }
     }
-     // Style pour les liens de navigation
+     
+    // Style pour les liens de navigation
     .navbar-links {
         display: flex;
         justify-content: space-between;
@@ -54,7 +55,7 @@
 
         // Lorsque le menu est ouvert
         &.open {
-            transform: translate(10px);
+            transform: translate(0);
         }
 
         // Style pour chaque lien de navigation

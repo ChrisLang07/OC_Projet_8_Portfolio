@@ -241,12 +241,13 @@
 
     &.isFixed {
         position: fixed;
-        top: -100svh;
+        top: -100vh;
         max-width: 1440px;
     }
 }
 
 .projects-two {
+    position:relative;
     transform: translateY(200svh);
     z-index: 20;
     background-color: rgba(30, 30, 30, 1);
