@@ -1,15 +1,15 @@
 // Style général de la section "projects" (Page d'accueil)
-.projects {
+.projects-one, .projects-two {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    height: 95svh;
+    position:relative;
+    height: 100svh;
     padding: 0 20px;
     gap: 5svh;
     transform: translateY(100svh);
     background-color: rgb(248, 249, 249);
-    z-index: 10;
 
     // Styles communs aux projets
     .project-one,
@@ -19,7 +19,6 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        flex-grow: 1;
 
         // Styles communs pour les titres des projets
         .project-one--title,
@@ -48,8 +47,13 @@
             }
         }
 
+        .project-two--title {
+            color: white;
+            border: 1px solid white;
+        }
+
         // Conteneur pour le contenu d'un projet
-        .all {
+        .all-pics {
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -104,11 +108,7 @@
                     /* Effet au survol */
                     &:hover {
                         cursor: pointer;
-                        transform: scale(0.95); 
                         filter: grayscale(0%); 
-                        transition: 
-                            transform 0.3s ease, 
-                            filter 0.3s ease; 
                     }
 
                     // Adaptation pour les petits écrans
@@ -205,15 +205,14 @@
     }
 
     // Conteneur pour le texte des projets
-    .projects-content {
+    .projects-one--content, .projects-two--content {
         text-align: center;
         width: 80%;
 
         // Texte des projets
-        .projects-text {
+        .project-one--text, .project-two--text {
             font-size: 18px;
-            font-weight: 400;
-            color: black;
+            font-weight: 450;
             margin: 0;
 
             // Adaptation pour les écrans moyens
@@ -226,5 +225,29 @@
                 font-size: 14px;
             }
         }
+
+        .project-one--text {
+            color: black;
+        }
+
+        .project-two--text {
+            color: white;
+        }
     }
+}
+
+.projects-one {
+    z-index: 10;
+
+    &.isFixed {
+        position: fixed;
+        top: -100svh;
+        max-width: 1440px;
+    }
+}
+
+.projects-two {
+    transform: translateY(200svh);
+    z-index: 20;
+    background-color: rgba(30, 30, 30, 1);
 }

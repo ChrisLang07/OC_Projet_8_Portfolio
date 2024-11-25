@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../assets/scss/components/Projects.scss';
 
-export default function Projects({ className, classTitle, title, classProject, jsonUrl, projectNumber }) {
+export default function Projects({ className, classTitle, projectTitle, classProject, jsonUrl, projectNumber }) {
     const [isVisible, setIsVisible] = useState(false);
     const [projects, setProjects] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -54,8 +54,8 @@ export default function Projects({ className, classTitle, title, classProject, j
 
     return (
         <section className={className}>
-            <h1 className={`${classTitle} ${isVisible ? 'isvisible' : ''}`}>{title}</h1>
-            <div className="all"> 
+            <h1 className={`${classTitle} ${isVisible ? 'isvisible' : ''}`}>{projectTitle}</h1>
+            <div className="all-pics"> 
             {filteredProjects.map((project, index) => (
                 <article key={index} className={classProject}>
                     <img
