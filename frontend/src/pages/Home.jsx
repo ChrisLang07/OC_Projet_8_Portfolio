@@ -79,9 +79,6 @@ export default function Home() {
       }
 
       lastScroll = currentScrolly;
-      console.log(currentScrolly);
-      console.log(lastScroll);
-      console.log(window.innerHeight)
     };
 
     window.addEventListener("scroll", handleScroll);
