@@ -23,12 +23,17 @@ app.use((req, res, next) => {
     next();
 });
 
+// Routes API
 app.use('/images', express.static(path.join(__dirname, 'images')));
-
 app.use('/api/contact', formRoute);
 app.use('/api', projectsRoute);
 
+// Servir les fichiers statiques de React (les fichiers build du frontend)
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 
-
+// Rediriger toutes les autres requêtes vers `index.html` pour React Router
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
 
 module.exports = app;
