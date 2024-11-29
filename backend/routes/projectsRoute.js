@@ -1,9 +1,8 @@
 const express = require('express');
-const { getProjects } = require('../controllers/projectsController.js'); 
 const router = express.Router();
+const projectsController = require('../controllers/projectsController');
 
-
-router.get('/projects', getProjects);
+// Définir la route pour récupérer tous les projets
+router.get('/projects', projectsController.getProjects);
 
 module.exports = router;
-
