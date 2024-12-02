@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import Content from '../components/Content';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';  // Importation de l'icône LinkedIn
 import '../assets/scss/components/Footer.scss';
 
 export default function Footer() {
@@ -20,9 +22,20 @@ export default function Footer() {
                 tabIndex="0"
                 onClick={() => setIsModalOpen(true)}
                 onKeyDown={(e) => e.key === "Enter" && setIsModalOpen(true)}
+                className="policy"
             >
                 Politique de confidentialité
             </span>
+            <br />
+            <a
+                href="https://www.linkedin.com/in/christophe-langlois"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="linkedin-link"
+            >
+                <FontAwesomeIcon icon={faLinkedin} size="lg" />
+                <span> Me suivre</span>
+            </a>
         </>
     );
 

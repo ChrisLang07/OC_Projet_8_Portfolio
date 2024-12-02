@@ -24,13 +24,18 @@
         border-radius: 8px;
         transition: font-size 0.3s ease, background-color 0.3s ease;
   
-        span {
+        .policy {
           text-decoration: underline;
           cursor: pointer;
   
           &:hover {
             color: #f0a500;
           }
+        }
+
+        .linkedin-link {
+          text-decoration: none;
+          color: white;
         }
 
         strong {
